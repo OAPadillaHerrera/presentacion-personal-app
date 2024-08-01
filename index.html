@@ -1,11 +1,178 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
+
+<head> 
+
+    <title>Mi Sitio Web</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+ 
 </head>
+
 <body>
-    <h1>Proyecto M1</h1>
-</body>
+
+    <!-- Header -->
+    <header>
+
+        <section class="header">
+
+            <h1 id="tipodeletrahs">Óscar Padilla</h1> 
+            <h2 id="subhea">Mi Página Web</h2>
+
+        </section>
+
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+
+        <!-- Sección: Sobre Mi -->
+        <section>
+
+            <div class="flex-container-SobreMi">
+
+                <h2 id="tipodeletrahs">Sobre Mi</h2>
+
+                <div class="flex-item-SobreMi">
+
+                    <p id="jusparSobreMi" class="tipodeletrahs1">Ingeniero. Nacido en Barranquilla, Colombia. Me volví<br>
+                        un apasionado de la programación desde que conocí<br>
+                        los simuladores de procesos, y trabajé en ese tema; mediante<br>                    
+                        desarrollo de software, como proyecto de grado en la universidad.<br>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Sección: Mis Tecnologías Favoritas -->
+        <section>
+
+            <div class="flex-container-mistecfa">
+
+                <h2 id="tipodeletrahs">Mis Tecnologías Favoritas</h2>
+
+                <div class="flex-item-mistecfa">
+
+                    <div class="flex-item-mistecfa1">
+
+                        <div class="márgenesmistecfa">
+
+                            <img id="HTML" src="assets/html-5.png" alt="Icono_HTML">
+
+                        </div>
+
+                        <div class="márgenesmistecfa">
+
+                            <h3 id="letrasmistecfa">HTML</h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex-item-mistecfa1">
+
+                        <div class="márgenesmistecfa">
+
+                            <img id="CSS" src="assets/css-3.png" alt="Icono_CSS">
+
+                        </div>
+
+                        <div class="márgenesmistecfa">
+
+                            <h3 id="letrasmistecfa">CSS</h3>
+
+                        </div>
+
+                    </div>  
+
+                    <div class="flex-item-mistecfa1">
+
+                        <div class="márgenesmistecfa">
+
+                            <img id="JavaScript" src="assets/JavaScript.png" alt="Icono_JavaScript">
+
+                        </div>
+
+                        <div class="márgenesmistecfa">
+
+                            <h3 id="letrasmistecfa">JavaScript</h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Sección: Mis Actividades Favoritas -->
+        <section>
+
+            <div class="centrarh2misactfa">
+
+                <h2 id="tipodeletrahs">Mis Actividades Favoritas</h2>
+
+            </div>
+
+            <div class="flex-container-forybut">
+
+                <form class="flex-item-forybut">
+
+                    <div class="flex-item-forybut1">
+
+                        <input type="text" id="nombre_de_la_actividad"/>
+                        <label for="nombre_de_la_actividad">Nombre de la actividad</label>
+
+                    </div>
+
+                    <div class="flex-item-forybut1">
+
+                        <textarea id="descripción_de_la_actividad" class="inputanchoforybut"></textarea>
+                        <label for="descripción_de_la_actividad">Describir la actividad</label>
+
+                    </div>
+
+                    <div class="flex-item-forybut1">
+
+                        <input type="text" id="imagen_de_la_actividad"/>
+                        <label for="imagen_de_la_actividad">Link de la imagen</label>
+
+                    </div>
+
+                </form>
+
+                <div class="flex-item-botón">
+
+                    <button id="cargar_actividad" type="submit"> AGREGAR ACTIVIDAD</button>
+
+                </div>
+
+            <div id="flex-container-misactfa" class="flex-container-misactfa">
+
+                <!-- Contenido Dinámico -->
+
+            </div>
+
+        </section>
+
+    </main>
+ 
+    <!-- JavaScript -->
+
+    <script src="scripts/models.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/index.js"></script>
+    
+    </body>
+
 </html>

@@ -12,6 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "jasmine": "^5.1.0",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.0"
+  },
+  "devDependencies": {
+    "jasmine-browser-runner": "^2.5.0",
+    "jasmine-core": "^5.2.0"
   }
 }

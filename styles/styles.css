@@ -1,0 +1,307 @@
+
+
+/*------------------------*/
+/* Estilos Globales */
+/*------------------------*/
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+
+body {
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+/*------------------------*/
+/* Estilos Header */
+/*------------------------*/
+
+.header {
+
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+  color: black;
+
+}
+
+h1 {
+
+  font-size: 2.0em;
+
+}
+
+
+h2 {
+
+  font-size: 2.0em;
+  color: black;
+
+}
+
+
+h3 {
+
+  font-weight: bold;
+
+}
+
+
+#tipodeletrahs {
+
+  font-family: 'Raleway', sans-serif;
+
+}
+
+
+#tipodeletrahs1 {
+
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+#subhea {
+
+  margin-top: 1.3em;
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+ 
+  
+
+}
+
+
+/*------------------------*/
+/* Estilos flex-container */
+/*------------------------*/
+
+.flex-container-SobreMi {
+
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4%;
+
+}
+
+.flex-container-mistecfa {
+
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-bottom: 2%;
+
+}
+
+.flex-container-forybut {
+
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0.5%;
+
+
+}
+
+
+.flex-container-misactfa {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 6%;
+  border: 1.3px solid black;
+  border-radius: 3%;
+  padding: 1%;
+  flex-wrap: wrap;
+  
+
+}
+
+
+.centrarh2misactfa {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 1%;
+
+}
+
+
+/*------------------------*/
+/* Estilos flex-item */
+/*------------------------*/
+
+.flex-item-SobreMi {
+
+  display: flex;
+  background-color: white;
+  margin: 40px;
+  text-align: center;
+
+}
+
+.flex-item-mistecfa1 {
+
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  margin: 20px;
+  border-radius: 5%;
+
+}
+
+.flex-item-forybut {
+
+  background-color: white;
+  text-align: center;
+
+}
+
+.flex-item-forybut1 {
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.flex-item-botón {
+ 
+  margin-top: 1%;
+  margin-bottom: 2%;
+  flex-direction: row;
+
+}
+
+.flex-item-mistecfa {
+
+  display: flex;
+  background-color: black;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border: 1px black solid;
+  
+
+}
+
+.márgenesmistecfa {
+
+  margin-top: 20%;
+  margin-bottom: 20%; 
+  margin-right: 10%;
+
+}
+
+
+/*------------------------*/
+/* Estilos Imágenes */
+/*------------------------*/
+
+img {
+
+  border-radius: 10%;
+  width: 212px;
+  height: 276px;
+
+}
+
+#foto {
+
+  border-radius: 50%;
+  width: 150px;
+  height: 200px;
+
+}
+
+#HTML,
+#CSS,
+#JavaScript {
+
+  width: 5em;
+  height: 5em;
+  margin-bottom: 0.1em;
+
+}
+
+
+/*------------------------*/
+/* Estilos Texto */
+/*------------------------*/
+
+#jusparSobreMi {
+
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 1.0em;
+
+}
+
+#letrasmistecfa {
+
+  margin-top: 0.9em;
+
+}
+
+
+/*------------------------*/
+/* Estilos Input */
+/*------------------------*/
+
+.inputanchoforybut {
+
+  width: 800px;
+  height: 100px;
+  resize: none;
+
+}
+
+/*https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg (CARGA).
+
+
+https://kinsta.com/es/wp-content/uploads/sites/8/2019/09/jpg-vs-jpeg-1024x512.jpg (CARGA).
+
+
+https://kinsta.com/es/wp-content/uploads/sites/8/2019/09/jpg-vs-jpeg-iso.png (CARGA).
+
+
+https://kinsta.com/es/wp-content/uploads/sites/8/2019/07/raster-image-example-2.png (CARGA).
+
+
+https://kinsta.com/es/wp-content/uploads/sites/8/2019/08/windows-paint-3.png (CARGA).
+
+
+https://kinsta.com/es/wp-content/uploads/sites/8/2019/07/export-affinity-designer-1.png (CARGA).*/
+
+/*<script src="https://example.com/sdk.js"></script>*/
+
+/*<div class="flex-item-quiensoy">
+
+  <img id="foto" src="assets/FOTO.jpg" alt="Foto de Óscar Padilla">
+
+</div>*/
