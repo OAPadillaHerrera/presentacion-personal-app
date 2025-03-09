@@ -1,3 +1,3 @@
 
 
-Desarrollo de una Aplicación Web de Presentación Personal.
+Desarrollo de una Aplicación Web Interactiva de Presentación Personal.
