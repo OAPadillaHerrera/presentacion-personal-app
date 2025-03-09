@@ -1,1 +1,3 @@
-Esta es la versión de mi Proyecto Integrador (Construccion de una Página Web de presentación personal en HTML, CSS, JavaScript y Otros.), para el Modulo #1 de la carrera de Full Stack, PT-22b, Grupo 02, en HENRY, hasta la fecha y hora de hoy.
+
+
+Aplicación Web de Presentación Personal.
