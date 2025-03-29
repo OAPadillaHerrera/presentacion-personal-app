@@ -33,13 +33,6 @@ body {
 
 }
 
-.cursor::after {
-
-  content: "|";
-  animation: blink 0.8s infinite;
-
-}
-
 @keyframes blink {
 
   50% { opacity: 0; }
@@ -346,12 +339,26 @@ img {
   height: 100px;
   resize: none;
   background-color: black;
+  color: white; 
 
 }
 .inputanchoforybut1 {  
  
   background-color: black;
+  color: white;
 
 }
  
+label {
 
+  margin-top: 1.0em;
+  color: white; 
+
+}
+
+button {
+
+  color: black; 
+  background-color: lightgray;
+
+}
