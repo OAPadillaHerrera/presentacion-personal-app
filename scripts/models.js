@@ -1,50 +1,48 @@
 
 
-// Clase Activity
 class Activity {
 
-    constructor(id, title, description, imgUrl) {
+    constructor (id, title, description, imgUrl) {
+
         this.id = id;
         this.title = title;
         this.description = description;
         this.imgUrl = imgUrl;
 
     }
+
 }
 
-// Clase Repository
 class Repository {
 
-    constructor() {
+    constructor () {
+
         this.activities = [];
-        this.nextId = 1; // Contador inicial
+        this.nextId = 1; 
 
     }
 
-    // Obtener todas las actividades
-    getAllActivities() {
+    getAllActivities () {
 
         return this.activities;
 
     }
 
-    // Crear nueva actividad
-    createActivity(title, description, imgUrl) {
+    createActivity (title, description, imgUrl) {
 
-        const activity = new Activity(this.nextId, title, description, imgUrl);
-        this.activities.push(activity);
-        this.nextId++; // Incrementar el id
+        const activity = new Activity (this.nextId, title, description, imgUrl);
+        this.activities.push (activity);
+        this.nextId++; 
 
     }
 
-    // Eliminar actividad por id
-    deleteActivity(id) {
+    deleteActivity (id) {
 
-        this.activities = this.activities.filter((element) => element.id !== id);
+        this.activities = this.activities.filter ((element) => element.id !== id);
         return this.activities;
+
     }
     
 }
-
 
 module.exports = {Activity, Repository};

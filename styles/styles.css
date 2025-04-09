@@ -172,7 +172,10 @@ color: yellow
   margin-bottom: 6%;
   border: 1.3px solid black;
   border-radius: 3%;
-  padding: 1%;
+  padding: 16px;
+  color: white;
+  flex-wrap: wrap;
+  gap: 16px;
   
 }
 
@@ -361,4 +364,45 @@ button {
   color: black; 
   background-color: lightgray;
 
+}
+
+.contenedor-Tarjeta {
+
+  background-color: #111;
+  border: 1px solid #333;
+  padding: 16px;
+  border-radius: 8px;
+  width: 300px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
+}
+
+.contenedor-Tarjeta h3 {
+
+  margin-bottom: 5px;
+  color: yellow;
+
+}
+
+.contenedor-Tarjeta p {
+
+  margin-bottom: 10px;
+  color: white;
+  text-align: justify; 
+
+}
+
+.contenedor-Tarjeta img {
+
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+  border: 2px solid #444;
+  
 }
