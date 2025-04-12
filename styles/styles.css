@@ -399,6 +399,78 @@ img {
 
 }
 
+@media (max-width: 768px) {
+  
+  h1, h2, h3 {
+
+    font-size: 1.1em;
+    text-align: center;
+
+  }
+
+  .inputanchoforybut,
+  .inputanchoforybut1,
+
+  textarea.inputanchoforybut {
+
+    width: 100%;
+    font-size: 0.95em;
+
+  }
+
+  .flex-container-SobreMi,
+  .flex-container-mistecfa,
+  .flex-container-forybut,
+  .flex-container-misactfa {
+
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .flex-item-mistecfa1 {
+
+    width: 90%;
+    margin: 10px auto;
+
+  }
+
+  .foto-perfil {
+
+    width: 100px;
+    height: 100px;
+
+  }
+
+  .contenedor-Tarjeta {
+
+    max-width: 100%;
+
+  }
+
+  #JavaScript,
+  #TypeScript,
+  #Python,
+  #Nest,
+  #PostgreSQL,
+
+  #React {
+
+    width: 3.5em;
+    height: 3.5em;
+
+  }
+
+}
+
+.input-error {
+
+  border: 2px solid red;
+  background-color: #330000;
+  
+}
+
 
 
 

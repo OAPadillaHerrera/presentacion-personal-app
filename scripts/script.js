@@ -37,7 +37,8 @@ function escribirTexto (elemento, texto, velocidad, callback) {
 
 function iniciarAnimacion () {
 
-    escribirTexto("bienvenida", textos[idiomaActual].bienvenida || "Bienvenidos a mi Página Web!", 150);
+    document.getElementById("bienvenida").innerHTML = ""; 
+    escribirTexto ("bienvenida", textos[idiomaActual].bienvenida || "Bienvenidos a mi Página Web!", 150);
 
 }
 
@@ -56,7 +57,7 @@ function cambiarIdioma (idioma) {
     document.querySelectorAll ("#tipodeletrahs")[2].textContent = t.actividadesTitulo;
 
     document.querySelector ('label[for="nombre_de_la_actividad"]').textContent = t.nombreLabel;
-    document.querySelector ('label[for="descripción_de_la_actividad"]').textContent = t.descripcionLabel;
+    document.querySelector ('label[for="descripcion_de_la_actividad"]').textContent = t.descripcionLabel;
     document.querySelector ('label[for="imagen_de_la_actividad"]').textContent = t.imagenLabel;
 
     document.getElementById ("cargar_actividad").textContent = t.botonAgregar;
@@ -72,8 +73,7 @@ function cambiarIdioma (idioma) {
 
     });
 
-    document.getElementById ("bienvenida").innerHTML = "";
-    escribirTexto ("bienvenida", t.bienvenida || "", 150);
+    iniciarAnimacion();
 
 }
 
