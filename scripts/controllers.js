@@ -77,59 +77,62 @@ function insertarActividades () {
 
 function handler (event) {
 
-    event.preventDefault ();
-  
-    const nombreInput = document.getElementById ("nombre_de_la_actividad");
-    const descripcionInput = document.getElementById ("descripcion_de_la_actividad");
-    const imagenInput = document.getElementById ("imagen_de_la_actividad");
-  
-    const entradaNombre = nombreInput.value.trim ();
-    const entradaDescripcion = descripcionInput.value.trim ();
-    const entradaImagen = imagenInput.value.trim ();
-  
-    [nombreInput, descripcionInput, imagenInput].forEach (input => {
+  event.preventDefault ();
 
-      input.classList.remove ("input-error");
+  const nombreInput = document.getElementById ("nombre_de_la_actividad");
+  const descripcionInput = document.getElementById ("descripcion_de_la_actividad");
+  const imagenInput = document.getElementById ("imagen_de_la_actividad");
 
-    });
-  
-    let hayError = false;
-  
-    if (!entradaNombre) {
+  const entradaNombre = nombreInput.value.trim ();
+  const entradaDescripcion = descripcionInput.value.trim ();
+  const entradaImagen = imagenInput.value.trim ();
 
-      nombreInput.classList.add ("input-error");      
-      hayError = true;
+  [nombreInput, descripcionInput, imagenInput].forEach ((input) => {
+    input.classList.remove ("input-error");
+  });
 
-    }
-  
-    if (!entradaDescripcion) {
+  let hayError = false;
 
-      descripcionInput.classList.add ("input-error");
-      hayError = true;
+  const textoRegex = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s.,;:()¿?!¡'"-]{3,}$/;
 
-    }
-  
-    if (!entradaImagen) {
+  if (!entradaNombre || !textoRegex.test(entradaNombre)) {
 
-      imagenInput.classList.add ("input-error");
-      hayError = true;
+    nombreInput.classList.add ("input-error");
 
-    }
-  
-    if (hayError) {
-
-      alert ("Todas las casillas deben estar diligenciadas");
-      return;
-
-    }
-
-    repositorio.createActivity (entradaNombre, entradaDescripcion, entradaImagen);
-    insertarActividades ();
-  
-    nombreInput.value = "";
-    descripcionInput.value = "";
-    imagenInput.value = "";
+    hayError = true;
 
   }
+
+  if (!entradaDescripcion || !textoRegex.test(entradaDescripcion)) {
+
+    descripcionInput.classList.add ("input-error");
+
+    hayError = true;
+
+  }
+
+  const imagenRegex = /\.(jpg|jpeg|png)$/i;
+
+  if (!entradaImagen || !imagenRegex.test(entradaImagen)) {
+
+    imagenInput.classList.add ("input-error");
+    hayError = true;
+
+  }
+
+  if (hayError) {
+
+    alert ("Por favor completa los campos correctamente:\n\n- Nombre y descripción deben ser texto válido.\n- Imagen debe ser un link .jpg, .jpeg o .png");
+    return;
+
+  }
+
+  repositorio.createActivity (entradaNombre, entradaDescripcion, entradaImagen);
+  insertarActividades ();
+
+  nombreInput.value = "";
+  descripcionInput.value = "";
+  imagenInput.value = "";
   
-  
+}
+
