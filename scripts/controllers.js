@@ -75,57 +75,68 @@ function insertarActividades () {
 
 }
 
+const textoRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s.,;:()¿?!¡'"-]{3,}$/;
+const imagenRegex = /\.(jpg|jpeg|png)$/i;
+
+function obtenerInputs () {
+
+  return {
+
+    nombreInput: document.getElementById ("nombre_de_la_actividad"),
+    descripcionInput: document.getElementById("descripcion_de_la_actividad"),
+    imagenInput: document.getElementById ("imagen_de_la_actividad")
+
+  };
+
+}
+
+function limpiarErrores (inputs) {
+
+  inputs.forEach (input => input.classList.remove("input-error"));
+
+}
+
 function handler (event) {
 
   event.preventDefault ();
 
-  const nombreInput = document.getElementById ("nombre_de_la_actividad");
-  const descripcionInput = document.getElementById ("descripcion_de_la_actividad");
-  const imagenInput = document.getElementById ("imagen_de_la_actividad");
+  const { nombreInput, descripcionInput, imagenInput } = obtenerInputs ();
 
   const entradaNombre = nombreInput.value.trim ();
   const entradaDescripcion = descripcionInput.value.trim ();
   const entradaImagen = imagenInput.value.trim ();
 
-  [nombreInput, descripcionInput, imagenInput].forEach ((input) => {
-    input.classList.remove ("input-error");
-  });
-
   let hayError = false;
 
-  const textoRegex = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s.,;:()¿?!¡'"-]{3,}$/;
+  limpiarErrores ([nombreInput, descripcionInput, imagenInput]);
 
-  if (!entradaNombre || !textoRegex.test(entradaNombre)) {
+  if (!textoRegex.test (entradaNombre)) {
 
     nombreInput.classList.add ("input-error");
-
     hayError = true;
 
   }
 
-  if (!entradaDescripcion || !textoRegex.test(entradaDescripcion)) {
+  if (!textoRegex.test (entradaDescripcion)) {
 
     descripcionInput.classList.add ("input-error");
-
     hayError = true;
 
   }
 
-  const imagenRegex = /\.(jpg|jpeg|png)$/i;
-
-  if (!entradaImagen || !imagenRegex.test(entradaImagen)) {
+  if (!imagenRegex.test (entradaImagen)) {
 
     imagenInput.classList.add ("input-error");
     hayError = true;
 
   }
 
-  if (hayError) {
+  /*if (hayError) {
 
-    alert ("Por favor completa los campos correctamente:\n\n- Nombre y descripción deben ser texto válido.\n- Imagen debe ser un link .jpg, .jpeg o .png");
+    alert ("Por favor completa los campos correctamente:\n\n- Nombre y descripción sin números.\n- Imagen debe terminar en .jpg, .jpeg o .png");
     return;
 
-  }
+  }*/
 
   repositorio.createActivity (entradaNombre, entradaDescripcion, entradaImagen);
   insertarActividades ();
@@ -133,6 +144,40 @@ function handler (event) {
   nombreInput.value = "";
   descripcionInput.value = "";
   imagenInput.value = "";
-  
+
+  limpiarErrores ([nombreInput, descripcionInput, imagenInput]);
+
 }
+
+function verificarCampos () {
+
+  const { nombreInput, descripcionInput, imagenInput } = obtenerInputs ();
+
+  const nombre = nombreInput.value.trim ();
+  const descripcion = descripcionInput.value.trim ();
+  const imagen = imagenInput.value.trim ();
+
+  const nombreValido = textoRegex.test (nombre);
+  const descripcionValida = textoRegex.test (descripcion);
+  const imagenValida = imagenRegex.test (imagen);
+
+  nombreInput.classList.toggle ("input-error", !nombreValido);
+  descripcionInput.classList.toggle ("input-error", !descripcionValida);
+  imagenInput.classList.toggle ("input-error", !imagenValida);
+ 
+  const boton = document.getElementById ("cargar_actividad");
+  boton.disabled = !(nombreValido && descripcionValida && imagenValida);
+}
+
+document.querySelectorAll ("#nombre_de_la_actividad, #descripcion_de_la_actividad, #imagen_de_la_actividad")
+
+  .forEach (input => {
+
+    input.addEventListener ("input", verificarCampos);
+
+  });
+
+document.getElementById ("cargar_actividad").addEventListener ("click", handler);
+
+
 
