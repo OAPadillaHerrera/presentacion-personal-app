@@ -29,7 +29,7 @@ const textos = {
 
     sobreMiTexto: [
 
-      "Desarrollador Web Full Stack, nacido en Barranquilla (Colombia), con formación en Ingeniería y enfoque en Backend.",
+      "Desarrollador Web Full Stack, nacido en Barranquilla (Colombia), con formación en Ingeniería Química.",
       "Mi pasión por la programación comenzó cuando conocí los simuladores de procesos químicos y trabajé en ese ámbito como proyecto de grado en la universidad.",
       "En ese momento, y aunque mi aporte en el trabajo no era el de programar, sí descubrí el potencial de los lenguajes de programación y las bases de datos, lo que despertó mi curiosidad por el desarrollo de software.",
       "Posteriormente, y a lo largo de mi carrera, esta inquietud me llevó a estudiar C++ y, más adelante, Python.",
@@ -55,7 +55,7 @@ const textos = {
 
     sobreMiTexto: [
 
-      "Full Stack Developer born in Barranquilla (Colombia), with a background in Engineering and a focus on Backend.",
+      "Full Stack Developer born in Barranquilla (Colombia), with a background in Chemical Engineering.",
       "My passion for programming began when I discovered chemical process simulators and worked with them during my university graduation project.",
       "Although I wasn’t coding at that time, I saw the potential of programming languages and databases, which sparked my curiosity for software development.",
       "Later in my career, this interest led me to study C++ and eventually Python.",
