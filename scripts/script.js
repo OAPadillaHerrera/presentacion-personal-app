@@ -60,7 +60,11 @@ function cambiarIdioma (idioma) {
     document.querySelector ('label[for="descripcion_de_la_actividad"]').textContent = t.descripcionLabel;
     document.querySelector ('label[for="imagen_de_la_actividad"]').textContent = t.imagenLabel;
 
-    document.getElementById ("cargar_actividad").textContent = t.botonAgregar;
+    document.getElementById("cargar_actividad").innerHTML = `
+        <img src="assets/icono-agregar.png" alt="Agregar" class="icono-boton">
+        ${t.botonAgregar}
+    `;
+
 
     const listaSobreMi = document.getElementById ("sobreMi");
     listaSobreMi.innerHTML = "";

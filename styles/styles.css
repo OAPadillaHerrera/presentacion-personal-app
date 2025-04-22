@@ -295,7 +295,7 @@ label {
 
   margin: 1% 0 3%;
   display: flex;
-  justify-content: center;
+  justify-content:center;
 
 }
 
@@ -303,7 +303,7 @@ button {
 
   color: black;
   background-color: lightgray;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
   border-radius: 4px;
 
@@ -481,7 +481,7 @@ img {
 
   background-color: #ccc;  
   transform: scale(0.97);  
-  font-weight: all 0.1s ease;
+  transition: all 0.1s ease;
 
 }
 
@@ -489,9 +489,30 @@ img {
 
   background-color:  #ccc;
   transform: scale(0.97);
-  font-weight: all 0.1s ease;
+  transition: all 0.1s ease;
 
 }
+
+.icono-bandera {
+
+  width: 26px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+
+}
+
+.icono-boton {
+
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+
+}
+
 
 
 
