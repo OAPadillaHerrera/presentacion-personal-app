@@ -36,7 +36,9 @@ const textos = {
       "También interactué con diversas herramientas como software de certificación, LIMS, ERP y CRM, lo que reforzó aún más mi interés por la programación.",
       "Finalmente, me gusta el Desarrollo Web porque combina programación, parte visual, manejo de información, e independencia geográfica."
 
-    ]
+    ],
+
+    mensajeError: `⚠️ Por favor completa todos los campos correctamente:<br>- Nombre y descripción sin números<br>- Imagen válida con extensión .jpg, .jpeg o .png`
 
   },
 
@@ -62,7 +64,9 @@ const textos = {
       "I also interacted with tools like certification software, LIMS, ERP, and CRM systems, which reinforced my interest in programming.",
       "I enjoy Web Development because it combines logic, visual design, data manipulation, and accessibility from anywhere."
 
-    ]
+    ],
+
+    mensajeError: `⚠️ Please complete all fields correctly:<br>- Name and description without numbers<br>- Valid image with extension .jpg, .jpeg, or .png`
 
   }
   

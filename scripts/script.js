@@ -65,6 +65,7 @@ function cambiarIdioma (idioma) {
         ${t.botonAgregar}
     `;
 
+    document.getElementById("mensaje-general-error").innerHTML = t.mensajeError;
 
     const listaSobreMi = document.getElementById ("sobreMi");
     listaSobreMi.innerHTML = "";
