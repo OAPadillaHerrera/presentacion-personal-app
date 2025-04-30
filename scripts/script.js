@@ -60,12 +60,12 @@ function cambiarIdioma (idioma) {
     document.querySelector ('label[for="descripcion_de_la_actividad"]').textContent = t.descripcionLabel;
     document.querySelector ('label[for="imagen_de_la_actividad"]').textContent = t.imagenLabel;
 
-    document.getElementById("cargar_actividad").innerHTML = `
+    document.getElementById ("cargar_actividad").innerHTML = `
         <img src="assets/icono-agregar.png" alt="Agregar" class="icono-boton">
         ${t.botonAgregar}
     `;
 
-    document.getElementById("mensaje-general-error").innerHTML = t.mensajeError;
+    document.getElementById ("mensaje-general-error").innerHTML = t.mensajeError;
 
     const listaSobreMi = document.getElementById ("sobreMi");
     listaSobreMi.innerHTML = "";
@@ -85,5 +85,49 @@ function cambiarIdioma (idioma) {
 document.addEventListener ("DOMContentLoaded", () => {
 
     cambiarIdioma (idiomaActual);
+
+    const nombreInput = document.getElementById ("nombre_de_la_actividad");
+    const descripcionInput = document.getElementById ("descripcion_de_la_actividad");
+    const imagenInput = document.getElementById ("imagen_de_la_actividad");
+
+    const nombre = localStorage.getItem ("nombreActividad");
+    const descripcion = localStorage.getItem ("descripcionActividad");
+    const imagen = localStorage.getItem ("imagenActividad");
+
+    if (nombre) nombreInput.value = nombre;
+    if (descripcion) descripcionInput.value = descripcion;
+    if (imagen) imagenInput.value = imagen;
+
+    nombreInput.addEventListener ("input", () => {
+
+        localStorage.setItem("nombreActividad", nombreInput.value);
+
+    });
+
+    descripcionInput.addEventListener ("input", () => {
+
+        localStorage.setItem ("descripcionActividad", descripcionInput.value);
+
+    });
+
+    imagenInput.addEventListener ("input", () => {
+
+        localStorage.setItem ("imagenActividad", imagenInput.value);
+
+    });
+
+    const botonAgregar = document.getElementById ("cargar_actividad");
+
+    botonAgregar.addEventListener ("click", () => {
+       
+        localStorage.removeItem ("nombreActividad");
+        localStorage.removeItem ("descripcionActividad");
+        localStorage.removeItem ("imagenActividad");
+
+        nombreInput.value = "";
+        descripcionInput.value = "";
+        imagenInput.value = "";
+        
+    });
 
 });

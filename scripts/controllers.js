@@ -170,7 +170,7 @@ function handler (event) {
 
   } else {
 
-    boton.classList.remove("boton-inactivo");
+    boton.classList.remove ("boton-inactivo");
     
   }
 
