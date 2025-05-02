@@ -84,50 +84,57 @@ function cambiarIdioma (idioma) {
 
 document.addEventListener ("DOMContentLoaded", () => {
 
-    cambiarIdioma (idiomaActual);
+ cambiarIdioma (idiomaActual);
 
-    const nombreInput = document.getElementById ("nombre_de_la_actividad");
-    const descripcionInput = document.getElementById ("descripcion_de_la_actividad");
-    const imagenInput = document.getElementById ("imagen_de_la_actividad");
+ const nombreInput = document.getElementById ("nombre_de_la_actividad");
+ const descripcionInput = document.getElementById ("descripcion_de_la_actividad");
+ const imagenInput = document.getElementById ("imagen_de_la_actividad");
 
-    const nombre = localStorage.getItem ("nombreActividad");
-    const descripcion = localStorage.getItem ("descripcionActividad");
-    const imagen = localStorage.getItem ("imagenActividad");
+ const nombre = localStorage.getItem ("nombreActividad");
+ const descripcion = localStorage.getItem ("descripcionActividad");
+ const imagen = localStorage.getItem ("imagenActividad");
 
-    if (nombre) nombreInput.value = nombre;
-    if (descripcion) descripcionInput.value = descripcion;
-    if (imagen) imagenInput.value = imagen;
+ if (nombre) nombreInput.value = nombre;
+ if (descripcion) descripcionInput.value = descripcion;
+ if (imagen) imagenInput.value = imagen;
 
-    nombreInput.addEventListener ("input", () => {
+ nombreInput.addEventListener ("input", () =>
+    localStorage.setItem ("nombreActividad", nombreInput.value)
+ );
 
-        localStorage.setItem("nombreActividad", nombreInput.value);
+ descripcionInput.addEventListener ("input", () =>
+    localStorage.setItem ("descripcionActividad", descripcionInput.value)
+ );
 
-    });
+ imagenInput.addEventListener ("input", () =>
+    localStorage.setItem ("imagenActividad", imagenInput.value)
+ );
 
-    descripcionInput.addEventListener ("input", () => {
+ insertarActividades ();
 
-        localStorage.setItem ("descripcionActividad", descripcionInput.value);
+ const botonAgregar = document.getElementById ("cargar_actividad");
 
-    });
+ botonAgregar.addEventListener ("click", () => {
 
-    imagenInput.addEventListener ("input", () => {
+    const title = nombreInput.value.trim ();
+        const description = descripcionInput.value.trim ();
+        const imgUrl = imagenInput.value.trim ();
 
-        localStorage.setItem ("imagenActividad", imagenInput.value);
+    if (!title || !description || !imgUrl) return;
 
-    });
+    repositorio.createActivity (title, description, imgUrl); 
+    insertarActividades (); 
 
-    const botonAgregar = document.getElementById ("cargar_actividad");
+    localStorage.removeItem ("nombreActividad");
+    localStorage.removeItem ("descripcionActividad");
+    localStorage.removeItem ("imagenActividad");
 
-    botonAgregar.addEventListener ("click", () => {
-       
-        localStorage.removeItem ("nombreActividad");
-        localStorage.removeItem ("descripcionActividad");
-        localStorage.removeItem ("imagenActividad");
+    nombreInput.value = "";
+    descripcionInput.value = "";
+    imagenInput.value = "";
 
-        nombreInput.value = "";
-        descripcionInput.value = "";
-        imagenInput.value = "";
-        
-    });
+ })
 
+ const repositorio = new Repository (); 
+    
 });
