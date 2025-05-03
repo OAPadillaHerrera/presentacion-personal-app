@@ -151,6 +151,10 @@ function handler (event) {
 
     mensajeGeneral.classList.add ("oculto");
 
+    localStorage.removeItem ("nombreActividad");
+    localStorage.removeItem ("descripcionActividad");
+    localStorage.removeItem ("imagenActividad");
+
   }
 
   repositorio.createActivity (nombre, descripcion, imagen);
