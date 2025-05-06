@@ -1,12 +1,16 @@
 
 
 class Activity {
+
     constructor (id, title, description, imgUrl) {
+
         this.id = id;
         this.title = title;
         this.description = description;
         this.imgUrl = imgUrl;
+
     }
+
 }
 
 class Repository {
@@ -17,8 +21,8 @@ class Repository {
         this.activities = data.map (obj => new Activity (obj.id, obj.title, obj.description, obj.imgUrl));
 
         this.nextId = this.activities.length > 0
-            ? Math.max (...this.activities.map(a => a.id)) + 1
-            : 1;
+        ? Math.max (...this.activities.map(a => a.id)) + 1
+        : 1;
 
     }
 

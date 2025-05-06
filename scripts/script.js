@@ -10,10 +10,20 @@
 
 */
 
+let timeoutId = null;  
 
 function escribirTexto (elemento, texto, velocidad, callback) {
 
     let i = 0;
+
+    if (timeoutId) {
+
+        clearTimeout (timeoutId);
+        timeoutId = null;
+
+    }
+
+    document.getElementById (elemento).innerHTML = ""; 
 
     function escribir () {
 
@@ -21,23 +31,21 @@ function escribirTexto (elemento, texto, velocidad, callback) {
 
             document.getElementById (elemento).innerHTML += texto.charAt (i);
             i++;
-            setTimeout (escribir, velocidad);
+            timeoutId = setTimeout (escribir, velocidad);
 
         } else if (callback) {
 
-            setTimeout (callback, 1000);
+            timeoutId = setTimeout (callback, 1000);
 
         }
-
     }
 
     escribir ();
-
+    
 }
 
 function iniciarAnimacion () {
 
-    document.getElementById("bienvenida").innerHTML = ""; 
     escribirTexto ("bienvenida", textos[idiomaActual].bienvenida || "Bienvenidos a mi Página Web!", 150);
 
 }
@@ -112,29 +120,17 @@ document.addEventListener ("DOMContentLoaded", () => {
 
  insertarActividades ();
 
- const botonAgregar = document.getElementById ("cargar_actividad");
+ const botonAgregar = document.getElementById ("cargar_actividad")
 
- botonAgregar.addEventListener ("click", () => {
-
-    const title = nombreInput.value.trim ();
-        const description = descripcionInput.value.trim ();
-        const imgUrl = imagenInput.value.trim ();
-
-    if (!title || !description || !imgUrl) return;
-
-    repositorio.createActivity (title, description, imgUrl); 
-    insertarActividades (); 
-
-    localStorage.removeItem ("nombreActividad");
-    localStorage.removeItem ("descripcionActividad");
-    localStorage.removeItem ("imagenActividad");
-
-    nombreInput.value = "";
-    descripcionInput.value = "";
-    imagenInput.value = "";
-
- })
-
- const repositorio = new Repository (); 
+ botonAgregar.addEventListener ("click", handler);
     
 });
+
+
+
+
+
+
+
+
+

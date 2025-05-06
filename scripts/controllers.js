@@ -19,7 +19,6 @@
 
 */
 
-
 const repositorio = new Repository ();
 
 function manejadorEliminar (event) {
