@@ -57,7 +57,7 @@ h3 {
 
 }
 
-#tipodeletrahs {
+.tipodeletrahs {
 
   color: yellow;
   text-align: center;
@@ -235,7 +235,7 @@ h3 {
 
 }
 
-#letrasmistecfa {
+.letrasmistecfa {
 
   margin-top: 0.001em;
   color: red;
@@ -520,6 +520,22 @@ img {
   vertical-align: middle;
 
 }
+
+.titulo-oculto {
+
+  opacity: 0;
+  transform: translateY (20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+}
+
+.titulo-visible {
+
+  opacity: 1;
+  transform: translateY (0);
+
+}
+
 
 
 

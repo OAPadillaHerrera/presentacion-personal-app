@@ -33,7 +33,7 @@ function escribirTexto (elemento, texto, velocidad, callback) {
             i++;
             timeoutId = setTimeout (escribir, velocidad);
 
-        } else if (callback) {
+        } else if (callback) {            
 
             timeoutId = setTimeout (callback, 1000);
 
@@ -60,9 +60,9 @@ function cambiarIdioma (idioma) {
     document.getElementById ("nombre").textContent = t.nombre;
     document.getElementById ("titulo").textContent = t.titulo;
 
-    document.querySelectorAll ("#tipodeletrahs")[0].textContent = t.sobreMiTitulo;
-    document.querySelectorAll ("#tipodeletrahs")[1].textContent = t.tecnologiasTitulo;
-    document.querySelectorAll ("#tipodeletrahs")[2].textContent = t.actividadesTitulo;
+    document.querySelectorAll (".tipodeletrahs")[0].textContent = t.sobreMiTitulo;
+    document.querySelectorAll (".tipodeletrahs")[1].textContent = t.tecnologiasTitulo;
+    document.querySelectorAll (".tipodeletrahs")[2].textContent = t.actividadesTitulo;
 
     document.querySelector ('label[for="nombre_de_la_actividad"]').textContent = t.nombreLabel;
     document.querySelector ('label[for="descripcion_de_la_actividad"]').textContent = t.descripcionLabel;
@@ -125,6 +125,31 @@ document.addEventListener ("DOMContentLoaded", () => {
  botonAgregar.addEventListener ("click", handler);
     
 });
+
+function animarAparicionTitulos () { 
+
+    const titulos = [
+
+        document.getElementById ("nombre"),
+        document.getElementById ("titulo"),
+        ...document.querySelectorAll (".tipodeletrahs")
+
+    ];
+
+    titulos.forEach ((titulo, index) => {
+
+        setTimeout (() => {
+
+            titulo.classList.remove("titulo-oculto");
+            titulo.classList.add("titulo-visible");
+              
+        }, (index + 1) * 5500);
+
+    });  
+
+}
+
+document.addEventListener ("DOMContentLoaded", animarAparicionTitulos);
 
 
 
