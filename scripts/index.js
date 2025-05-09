@@ -1,6 +1,6 @@
 
 
-const mostrarActividad = document.getElementById ("cargar_actividad");
+const mostrarActividad = document.getElementById ("activity-loader");
 mostrarActividad.addEventListener ("click", handler);
 
 

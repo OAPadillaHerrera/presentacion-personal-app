@@ -43,7 +43,7 @@ function construirActividad (activity) {
     imagenElemento.src = imgUrl;
     imagenElemento.alt = `Imagen de ${title}`;
 
-    contenedorTarjeta.classList.add ("contenedor-Tarjeta");
+    contenedorTarjeta.classList.add ("card-container");
     contenedorTarjeta.appendChild (tituloElemento);
     contenedorTarjeta.appendChild (descripcionElemento);
     contenedorTarjeta.appendChild (imagenElemento);
@@ -61,7 +61,7 @@ function construirActividad (activity) {
 
 function insertarActividades () {
 
-    const contenedorTarjetas = document.querySelector ("#flex-container-misactfa");
+    const contenedorTarjetas = document.querySelector ("#my-activities-container");
     contenedorTarjetas.innerHTML = "";
 
     const todasLasActividades = repositorio.getAllActivities ().map (construirActividad);
@@ -143,12 +143,12 @@ function handler (event) {
 
   if (hayError) {
 
-    mensajeGeneral.classList.remove ("oculto");
+    mensajeGeneral.classList.remove ("hidden");
     return;
 
   } else {
 
-    mensajeGeneral.classList.add ("oculto");
+    mensajeGeneral.classList.add ("hidden");
 
     localStorage.removeItem ("nombreActividad");
     localStorage.removeItem ("descripcionActividad");
@@ -165,7 +165,7 @@ function handler (event) {
 
   limpiarErrores ([nombreInput, descripcionInput, imagenInput]);
 
-  const boton = document.getElementById ("cargar_actividad");
+  const boton = document.getElementById ("activity-loader");
 
   if (hayError) {
 

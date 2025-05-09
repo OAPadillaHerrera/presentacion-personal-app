@@ -60,22 +60,22 @@ function cambiarIdioma (idioma) {
     document.getElementById ("nombre").textContent = t.nombre;
     document.getElementById ("titulo").textContent = t.titulo;
 
-    document.querySelectorAll (".tipodeletrahs")[0].textContent = t.sobreMiTitulo;
-    document.querySelectorAll (".tipodeletrahs")[1].textContent = t.tecnologiasTitulo;
-    document.querySelectorAll (".tipodeletrahs")[2].textContent = t.actividadesTitulo;
+    document.querySelectorAll (".font-heading")[0].textContent = t.sobreMiTitulo;
+    document.querySelectorAll (".font-heading")[1].textContent = t.tecnologiasTitulo;
+    document.querySelectorAll (".font-heading")[2].textContent = t.actividadesTitulo;
 
     document.querySelector ('label[for="nombre_de_la_actividad"]').textContent = t.nombreLabel;
     document.querySelector ('label[for="descripcion_de_la_actividad"]').textContent = t.descripcionLabel;
     document.querySelector ('label[for="imagen_de_la_actividad"]').textContent = t.imagenLabel;
 
-    document.getElementById ("cargar_actividad").innerHTML = `
-        <img src="assets/icono-agregar.png" alt="Agregar" class="icono-boton">
+    document.getElementById ("activity-loader").innerHTML = `
+        <img src="assets/icono-agregar.png" alt="Agregar" class="button-icon">
         ${t.botonAgregar}
     `;
 
     document.getElementById ("mensaje-general-error").innerHTML = t.mensajeError;
 
-    const listaSobreMi = document.getElementById ("sobreMi");
+    const listaSobreMi = document.getElementById ("about-me");
     listaSobreMi.innerHTML = "";
 
     t.sobreMiTexto.forEach (texto => {
@@ -120,7 +120,7 @@ document.addEventListener ("DOMContentLoaded", () => {
 
  insertarActividades ();
 
- const botonAgregar = document.getElementById ("cargar_actividad")
+ const botonAgregar = document.getElementById ("activity-loader");
 
  botonAgregar.addEventListener ("click", handler);
     
@@ -132,7 +132,7 @@ function animarAparicionTitulos () {
 
         document.getElementById ("nombre"),
         document.getElementById ("titulo"),
-        ...document.querySelectorAll (".tipodeletrahs")
+        ...document.querySelectorAll (".font-heading")
 
     ];
 
@@ -140,8 +140,8 @@ function animarAparicionTitulos () {
 
         setTimeout (() => {
 
-            titulo.classList.remove("titulo-oculto");
-            titulo.classList.add("titulo-visible");
+            titulo.classList.remove ("hidden-title");
+            titulo.classList.add ("visible-title");
               
         }, (index + 1) * 5500);
 

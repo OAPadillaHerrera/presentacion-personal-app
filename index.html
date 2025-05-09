@@ -21,29 +21,27 @@
 
         <section class="header">
 
-            <img src = "assets/CV, Foto, Henry, 2025.png" alt = "Foto de Óscar Padilla" class = "foto-perfil">
+            <img src = "assets/CV, Foto, Henry, 2025.png" alt = "Foto de Óscar Padilla" class = "profile-photo">
 
             <div>
 
                 <h1 id = "bienvenida" ></h1>
-
-                <h3 id = "nombre" class = "titulo-oculto"> ÓSCAR PADILLA</h3> 
-                <h2 id = "titulo" class = "titulo-oculto"> Full Stack Developer</h2>
-               
+                <h3 id = "nombre" class = "hidden-title"> ÓSCAR PADILLA</h3> 
+                <h2 id = "titulo" class = "hidden-title"></h2>               
                 
             </div>
 
-            <div class = "idiomas">
+            <div class = "languages">
 
                 <button onclick = "cambiarIdioma ('es')">
                     
-                    <img src="assets/Bandera, España.png" alt="Español" class="icono-bandera"> ESPAÑOL
+                    <img src="assets/Bandera, España.png" alt="Español" class="flag-icon"> ESPAÑOL
                 
                 </button>
 
                 <button onclick="cambiarIdioma('en')">
                     
-                    <img src="assets/Bandera, USA.png" alt="English" class="icono-bandera"> ENGLISH
+                    <img src="assets/Bandera, USA.png" alt="English" class="flag-icon"> ENGLISH
 
 
                 </button>
@@ -58,26 +56,13 @@
 
         <section>
 
-            <div class="flex-container-SobreMi">
+            <div class="about-me-container">
 
-                <h2 class = "tipodeletrahs titulo-oculto">Sobre Mi</h2>
-
-                <div class="flex-item-SobreMi">
-
-                    <ul id="sobreMi">
-                        <li>Full Stack Developer, nacido en Barranquilla (Colombia), con formación en Ingeniería Química.</li>
-                        
-                        <li>Mi pasión por la programación comenzó cuando conocí los simuladores de procesos químicos y trabajé en ese ámbito como proyecto de grado en la universidad.</li>
-                    
-                        <li>En ese momento, y aunque mi aporte en el trabajo no era el de programar, sí descubrí el potencial de los lenguajes de programación y las bases de datos, lo que despertó mi curiosidad por el desarrollo de software.</li>
-                    
-                        <li>Posteriormente, y a lo largo de mi carrera, esta inquietud me llevó a estudiar C++ y, más adelante, Python.</li>
-                    
-                        <li>También interactué con diversas herramientas como software de certificación, LIMS (Laboratory Information Management System), ERP (Enterprise Resources Planning) y CRM (Customer Relationship Management), lo que reforzó aún más mi interés por la programación y la capacidad de estas tecnologías para optimizar procesos y resolver problemas complejos.</li>
-                    
-                        <li>Finalmente, me gusta el Desarrollo Web, porque que combina programación, parte visual e interactiva, manejo y/o manipulación de información, y posibilidad de acceder a aplicaciones desde casi cualquier lugar.</li>
-                    </ul>
-                         
+                <h2 class = "font-heading hidden-title"></h2> 
+         
+                <div class="about-me-item">                                 
+               
+                    <ul id="about-me"></ul>                         
 
                 </div>
 
@@ -87,57 +72,57 @@
 
         <section>
 
-            <div class="flex-container-mistecfa">
+            <div class="my-skills-container">
 
-                <h2 class = "tipodeletrahs titulo-oculto"> Tecnologías</h2>
+                <h2 class = "font-heading hidden-title"></h2>
         
-                <div class="flex-item-mistecfa">
+                <div class="my-skill-item">
                     
-                    <div class="flex-item-mistecfa1">
+                    <div class="my-skill-item1">
 
-                        <div class="márgenesmistecfa">
+                        <div class="my-skills-margins">
 
-                            <img id="Nest" src="assets/Nest.png" alt="Icono_NestJS" class="efectomistecfa">
+                            <img id="Nest" src="assets/Nest.png" alt="Icono_NestJS" class="my-skills-effect">
 
                         </div>
 
-                        <h3 class = "letrasmistecfa"> NestJS</h3>
+                        <h3 class = "my-skills-text"> NestJS</h3>
 
                     </div>
 
-                    <div class="flex-item-mistecfa1">
+                    <div class="my-skill-item1">
 
-                        <div class="márgenesmistecfa">
+                        <div class="my-skills-margins">
 
-                            <img id="React" src="assets/React.png" alt="Icono_React.js" class="efectomistecfa">
+                            <img id="React" src="assets/React.png" alt="Icono_React.js" class="my-skills-effect">
 
                         </div>
 
-                        <h3 class = "letrasmistecfa"> React.js</h3>
+                        <h3 class = "my-skills-text"> React.js</h3>
 
                     </div>
     
-                    <div class="flex-item-mistecfa1">
+                    <div class="my-skill-item1">
 
-                        <div class="márgenesmistecfa">
+                        <div class="my-skills-margins">
 
-                            <img id="TypeScript" src="assets/TypeScript.png" alt="Icono_TypeScript" class="efectomistecfa">
+                            <img id="TypeScript" src="assets/TypeScript.png" alt="Icono_TypeScript" class="my-skills-effect">
 
                         </div>
 
-                        <h3 class = "letrasmistecfa"> TypeScript</h3>
+                        <h3 class = "my-skills-text"> TypeScript</h3>
 
                     </div>
         
-                    <div class="flex-item-mistecfa1">
+                    <div class="my-skill-item1">
 
-                        <div class="márgenesmistecfa">
+                        <div class="my-skills-margins">
 
-                            <img id="Python" src="assets/Python.png" alt="Icono_Python" class="efectomistecfa">
+                            <img id="Python" src="assets/Python.png" alt="Icono_Python" class="my-skills-effect">
 
                         </div>
 
-                        <h3 class = "letrasmistecfa"> Python</h3>
+                        <h3 class = "my-skills-text"> Python</h3>
 
                     </div>
 
@@ -149,55 +134,54 @@
 
         <section>      
 
-            <div class="flex-container-forybut" >   
+            <div class="form-button-container" >   
                 
-                <div class="centrarh2misactfa">
+                <div class="section-activities-center">
 
-                    <h2 class ="tipodeletrahs titulo-oculto"> Mis Actividades Favoritas</h2>
+                    <h2 class ="font-heading hidden-title"></h2>
     
                 </div>
                 
-                <p id="mensaje-general-error" class="mensaje-error oculto"></p>                 
+                <p id="mensaje-general-error" class="message-error hidden"></p>                 
                                          
-                <form class="flex-item-forybut">                    
+                <form class="form-button-item">                    
 
-                    <div class="flex-item-forybut1">
+                    <div class="form-button-item1">
 
-                        <input type="text" id="nombre_de_la_actividad" class="inputanchoforybut1"/>
-                        <label for="nombre_de_la_actividad">Nombre de la actividad</label>
-
-                    </div>
-
-                    <div class="flex-item-forybut1">
-
-                        <textarea id="descripcion_de_la_actividad" class="inputanchoforybut"></textarea>
-                        <label for="descripcion_de_la_actividad">Describir la actividad</label>
+                        <input type="text" id="nombre_de_la_actividad" class="form-button-input-width1"/>
+                        <label for="nombre_de_la_actividad"></label>
 
                     </div>
 
-                    <div class="flex-item-forybut1">
+                    <div class="form-button-item1">
 
-                        <input type="text" id="imagen_de_la_actividad" class="inputanchoforybut1"/>
-                        <label for="imagen_de_la_actividad">Link de la imagen</label>
+                        <textarea id="descripcion_de_la_actividad" class="form-button-input-width"></textarea>
+                        <label for="descripcion_de_la_actividad"></label>
+
+                    </div>
+
+                    <div class="form-button-item1">
+
+                        <input type="text" id="imagen_de_la_actividad" class="form-button-input-width1"/>
+                        <label for="imagen_de_la_actividad"></label>
 
                     </div>                      
                     
                 </form>                     
                 
-                <div class="flex-item-botón">
+                <div class="button-item">
 
-                    <button id="cargar_actividad" type="button">
+                    <button id="activity-loader" type="button">
                         
-                        <img src="assets/icono-agregar.png" alt="Agregar" class="icono-boton">
-                        AGREGAR ACTIVIDAD
+                        <img src="assets/icono-agregar.png" alt="Agregar" class="button-icon">
                       
                     </button>
 
                 </div>                   
                 
-            <div id="flex-container-misactfa" class="flex-container-misactfa">
+            <div id="my-activities-container" class="my-activities-container">
 
-                <!-- Contenido Dinámico -->
+              <!-- Dynamic content -->
 
             </div>
 

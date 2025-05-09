@@ -1,11 +1,11 @@
 
 
 /* 
-  reset.css – Restablecimiento de estilos por defecto del navegador
+  reset.css – Resetting default browser styles
 
-  Este archivo elimina márgenes, rellenos, bordes y estilos predeterminados 
-  de los navegadores para garantizar una base visual consistente en todos 
-  los dispositivos y navegadores modernos.
+  This file removes default margins, padding, borders, and other 
+  browser-applied styles to ensure a consistent visual baseline 
+  across all modern devices and browsers.
 */
 
 html, body, div, span, applet, object, iframe,
