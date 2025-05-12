@@ -1,12 +1,22 @@
 
 
+<!--
+  index.html – Main structure for the "presentacion-personal-app" site
+
+  Defines the overall structure of the page, including:
+  language switch buttons, header with profile photo and title,
+  sections for "About Me", "Technologies", and a dynamic form
+  to add and display user activities. Uses semantic HTML5 elements
+  and standardized class/id naming conventions for maintainability.
+-->
+
 <!DOCTYPE html>
 
 <html lang="en">
 
 <head> 
 
-    <title>Mi Sitio Web</title>
+    <title>My Website</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
@@ -19,30 +29,29 @@
 
     <header>
 
-        <section class="header">
+        <section class = "header">
 
-            <img src = "assets/CV, Foto, Henry, 2025.png" alt = "Foto de Óscar Padilla" class = "profile-photo">
+            <img src = "assets/CV_Foto_Henry_2025.png" alt = "Photo of Óscar Padilla" class = "profile-photo">
 
             <div>
 
-                <h1 id = "bienvenida" ></h1>
-                <h3 id = "nombre" class = "hidden-title"> ÓSCAR PADILLA</h3> 
-                <h2 id = "titulo" class = "hidden-title"></h2>               
+                <h1 id = "welcome"></h1>
+                <h3 id = "name" class = "hidden-title"> ÓSCAR PADILLA</h3> 
+                <h2 id = "title" class = "hidden-title"></h2>               
                 
             </div>
 
             <div class = "languages">
 
-                <button onclick = "cambiarIdioma ('es')">
+                <button onclick = "changeLanguage ('es')">
                     
-                    <img src="assets/Bandera, España.png" alt="Español" class="flag-icon"> ESPAÑOL
-                
+                    <img src = "assets/Bandera_España.png" alt = "Spanish" class = "flag-icon"> SPANISH
+
                 </button>
 
-                <button onclick="cambiarIdioma('en')">
+                <button onclick = "changeLanguage ('en')">
                     
-                    <img src="assets/Bandera, USA.png" alt="English" class="flag-icon"> ENGLISH
-
+                    <img src = "assets/Bandera_USA.png" alt = "English" class = "flag-icon"> ENGLISH
 
                 </button>
 
@@ -56,13 +65,13 @@
 
         <section>
 
-            <div class="about-me-container">
+            <div class = "about-me-container">
 
                 <h2 class = "font-heading hidden-title"></h2> 
          
-                <div class="about-me-item">                                 
+                <div class = "about-me-item">                                 
                
-                    <ul id="about-me"></ul>                         
+                    <ul id = "about-me"></ul>                         
 
                 </div>
 
@@ -72,17 +81,17 @@
 
         <section>
 
-            <div class="my-skills-container">
+            <div class = "my-skills-container">
 
                 <h2 class = "font-heading hidden-title"></h2>
         
-                <div class="my-skill-item">
+                <div class = "my-skill-item">
                     
-                    <div class="my-skill-item1">
+                    <div class = "my-skill-item1">
 
-                        <div class="my-skills-margins">
+                        <div class = "my-skills-margins">
 
-                            <img id="Nest" src="assets/Nest.png" alt="Icono_NestJS" class="my-skills-effect">
+                            <img id = "Nest" src = "assets/Nest.png" alt = "NestJS icon" class = "my-skills-effect">
 
                         </div>
 
@@ -90,11 +99,11 @@
 
                     </div>
 
-                    <div class="my-skill-item1">
+                    <div class ="my-skill-item1">
 
-                        <div class="my-skills-margins">
+                        <div class = "my-skills-margins">
 
-                            <img id="React" src="assets/React.png" alt="Icono_React.js" class="my-skills-effect">
+                            <img id = "React" src = "assets/React.png" alt = "React.js icon" class = "my-skills-effect">
 
                         </div>
 
@@ -102,11 +111,11 @@
 
                     </div>
     
-                    <div class="my-skill-item1">
+                    <div class = "my-skill-item1">
 
-                        <div class="my-skills-margins">
+                        <div class = "my-skills-margins">
 
-                            <img id="TypeScript" src="assets/TypeScript.png" alt="Icono_TypeScript" class="my-skills-effect">
+                            <img id = "TypeScript" src = "assets/TypeScript.png" alt = "TypeScript icon" class = "my-skills-effect">
 
                         </div>
 
@@ -114,11 +123,11 @@
 
                     </div>
         
-                    <div class="my-skill-item1">
+                    <div class = "my-skill-item1">
 
-                        <div class="my-skills-margins">
+                        <div class = "my-skills-margins">
 
-                            <img id="Python" src="assets/Python.png" alt="Icono_Python" class="my-skills-effect">
+                            <img id = "Python" src = "assets/Python.png" alt = "Python icon" class = "my-skills-effect">
 
                         </div>
 
@@ -134,54 +143,54 @@
 
         <section>      
 
-            <div class="form-button-container" >   
+            <div class = "form-button-container" >   
                 
-                <div class="section-activities-center">
+                <div class = "section-activities-center">
 
-                    <h2 class ="font-heading hidden-title"></h2>
+                    <h2 class = "font-heading hidden-title"></h2>
     
                 </div>
                 
-                <p id="mensaje-general-error" class="message-error hidden"></p>                 
+                <p id = "general-error-message" class = "message-error hidden"></p>                 
                                          
-                <form class="form-button-item">                    
+                <form class = "form-button-item">                    
 
-                    <div class="form-button-item1">
+                    <div class = "form-button-item1">
 
-                        <input type="text" id="nombre_de_la_actividad" class="form-button-input-width1"/>
-                        <label for="nombre_de_la_actividad"></label>
-
-                    </div>
-
-                    <div class="form-button-item1">
-
-                        <textarea id="descripcion_de_la_actividad" class="form-button-input-width"></textarea>
-                        <label for="descripcion_de_la_actividad"></label>
+                        <input type = "text" id="activityName" class = "form-button-input-width1"/>
+                        <label for = "activityName"></label>
 
                     </div>
 
-                    <div class="form-button-item1">
+                    <div class = "form-button-item1">
 
-                        <input type="text" id="imagen_de_la_actividad" class="form-button-input-width1"/>
-                        <label for="imagen_de_la_actividad"></label>
+                        <textarea id = "activityDescription" class = "form-button-input-width"></textarea>
+                        <label for = "activityDescription"></label>
+
+                    </div>
+
+                    <div class = "form-button-item1">
+
+                        <input type = "text" id = "activityImage" class = "form-button-input-width1"/>
+                        <label for = "activityImage"></label>
 
                     </div>                      
                     
                 </form>                     
                 
-                <div class="button-item">
+                <div class = "button-item">
 
-                    <button id="activity-loader" type="button">
+                    <button id = "activity-loader" type = "button">
                         
-                        <img src="assets/icono-agregar.png" alt="Agregar" class="button-icon">
+                        <img src = "assets/icono-agregar.png" alt = "Add" class = "button-icon">
                       
                     </button>
 
                 </div>                   
                 
-            <div id="my-activities-container" class="my-activities-container">
+            <div id = "my-activities-container" class = "my-activities-container">
 
-              <!-- Dynamic content -->
+              <!--  Dynamic content -->
 
             </div>
 
@@ -198,5 +207,9 @@
     </body>
 
 </html>
+
+
+
+
 
 

@@ -38,7 +38,7 @@ function construirActividad (activity) {
     const imagenElemento = document.createElement ('img');
     const eliminarActividades = document.createElement ('button');
 
-    tituloElemento.innerHTML = title;
+    tituloElemento.innerHTML = /*nombre*/title;
     descripcionElemento.innerHTML = description;
     imagenElemento.src = imgUrl;
     imagenElemento.alt = `Imagen de ${title}`;
@@ -81,9 +81,9 @@ function obtenerInputs () {
 
   return {
 
-    nombreInput: document.getElementById ("nombre_de_la_actividad"),
-    descripcionInput: document.getElementById ("descripcion_de_la_actividad"),
-    imagenInput: document.getElementById ("imagen_de_la_actividad")
+    nombreInput: document.getElementById ("activityName"),
+    descripcionInput: document.getElementById ("activityDescription"),
+    imagenInput: document.getElementById ("activityImage")
 
   };
 
@@ -116,7 +116,7 @@ function handler (event) {
   const { nombreInput, descripcionInput, imagenInput } = obtenerInputs ();
   const { nombre, descripcion, imagen } = obtenerValoresLimpios ();
 
-  const mensajeGeneral = document.getElementById ("mensaje-general-error");
+  const mensajeGeneral = document.getElementById ("general-error-message");
   let hayError = false;
 
   limpiarErrores ([nombreInput, descripcionInput, imagenInput]);

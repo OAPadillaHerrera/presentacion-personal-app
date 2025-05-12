@@ -46,34 +46,34 @@ function escribirTexto (elemento, texto, velocidad, callback) {
 
 function iniciarAnimacion () {
 
-    escribirTexto ("bienvenida", textos[idiomaActual].bienvenida || "Bienvenidos a mi Página Web!", 150);
+    escribirTexto ("welcome", textos[idiomaActual].welcome || "Bienvenidos a mi Página Web!", 150);
 
 }
 
 let idiomaActual = "es";
 
-function cambiarIdioma (idioma) {
+function changeLanguage (language) {
 
-    idiomaActual = idioma;
-    const t = textos [idioma]
+    idiomaActual = language;
+    const t = textos [language]
 
-    document.getElementById ("nombre").textContent = t.nombre;
-    document.getElementById ("titulo").textContent = t.titulo;
+    document.getElementById ("name").textContent = t.name;
+    document.getElementById ("title").textContent = t.title;
 
     document.querySelectorAll (".font-heading")[0].textContent = t.sobreMiTitulo;
     document.querySelectorAll (".font-heading")[1].textContent = t.tecnologiasTitulo;
     document.querySelectorAll (".font-heading")[2].textContent = t.actividadesTitulo;
 
-    document.querySelector ('label[for="nombre_de_la_actividad"]').textContent = t.nombreLabel;
-    document.querySelector ('label[for="descripcion_de_la_actividad"]').textContent = t.descripcionLabel;
-    document.querySelector ('label[for="imagen_de_la_actividad"]').textContent = t.imagenLabel;
+    document.querySelector ('label[for="activityName"]').textContent = t.nombreLabel;
+    document.querySelector ('label[for="activityDescription"]').textContent = t.descripcionLabel;
+    document.querySelector ('label[for="activityImage"]').textContent = t.imagenLabel;
 
     document.getElementById ("activity-loader").innerHTML = `
-        <img src="assets/icono-agregar.png" alt="Agregar" class="button-icon">
+        <img src="assets/icono-agregar.png" alt="Add" class="button-icon">
         ${t.botonAgregar}
     `;
 
-    document.getElementById ("mensaje-general-error").innerHTML = t.mensajeError;
+    document.getElementById ("general-error-message").innerHTML = t.mensajeError;
 
     const listaSobreMi = document.getElementById ("about-me");
     listaSobreMi.innerHTML = "";
@@ -92,11 +92,11 @@ function cambiarIdioma (idioma) {
 
 document.addEventListener ("DOMContentLoaded", () => {
 
- cambiarIdioma (idiomaActual);
+changeLanguage (idiomaActual);
 
- const nombreInput = document.getElementById ("nombre_de_la_actividad");
- const descripcionInput = document.getElementById ("descripcion_de_la_actividad");
- const imagenInput = document.getElementById ("imagen_de_la_actividad");
+ const nombreInput = document.getElementById ("activityName");
+ const descripcionInput = document.getElementById ("activityDescription");
+ const imagenInput = document.getElementById ("activityImage");
 
  const nombre = localStorage.getItem ("nombreActividad");
  const descripcion = localStorage.getItem ("descripcionActividad");
@@ -130,18 +130,18 @@ function animarAparicionTitulos () {
 
     const titulos = [
 
-        document.getElementById ("nombre"),
-        document.getElementById ("titulo"),
+        document.getElementById ("name"),
+        document.getElementById ("title"),
         ...document.querySelectorAll (".font-heading")
 
     ];
 
-    titulos.forEach ((titulo, index) => {
+    titulos.forEach ((title, index) => {
 
         setTimeout (() => {
 
-            titulo.classList.remove ("hidden-title");
-            titulo.classList.add ("visible-title");
+            title.classList.remove ("hidden-title");
+            title.classList.add ("visible-title");
               
         }, (index + 1) * 5500);
 
