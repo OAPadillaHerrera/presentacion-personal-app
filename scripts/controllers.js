@@ -38,7 +38,7 @@ function construirActividad (activity) {
     const imagenElemento = document.createElement ('img');
     const eliminarActividades = document.createElement ('button');
 
-    tituloElemento.innerHTML = /*nombre*/title;
+    tituloElemento.innerHTML = title;
     descripcionElemento.innerHTML = description;
     imagenElemento.src = imgUrl;
     imagenElemento.alt = `Imagen de ${title}`;

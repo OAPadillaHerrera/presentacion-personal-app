@@ -46,7 +46,7 @@ function escribirTexto (elemento, texto, velocidad, callback) {
 
 function iniciarAnimacion () {
 
-    escribirTexto ("welcome", textos[idiomaActual].welcome || "Bienvenidos a mi Página Web!", 150);
+    escribirTexto ("welcome", texts [idiomaActual].welcome || "Bienvenidos a mi Página Web!", 150);
 
 }
 
@@ -55,30 +55,30 @@ let idiomaActual = "es";
 function changeLanguage (language) {
 
     idiomaActual = language;
-    const t = textos [language]
+    const t = texts [language]
 
     document.getElementById ("name").textContent = t.name;
     document.getElementById ("title").textContent = t.title;
 
-    document.querySelectorAll (".font-heading")[0].textContent = t.sobreMiTitulo;
-    document.querySelectorAll (".font-heading")[1].textContent = t.tecnologiasTitulo;
-    document.querySelectorAll (".font-heading")[2].textContent = t.actividadesTitulo;
+    document.querySelectorAll (".font-heading")[0].textContent = t.aboutMeTitle;
+    document.querySelectorAll (".font-heading")[1].textContent = t.technologiesTitle;
+    document.querySelectorAll (".font-heading")[2].textContent = t.activitiesTitle;
 
-    document.querySelector ('label[for="activityName"]').textContent = t.nombreLabel;
-    document.querySelector ('label[for="activityDescription"]').textContent = t.descripcionLabel;
-    document.querySelector ('label[for="activityImage"]').textContent = t.imagenLabel;
+    document.querySelector ('label[for="activityName"]').textContent = t.nameLabel;
+    document.querySelector ('label[for="activityDescription"]').textContent = t.descriptionLabel;
+    document.querySelector ('label[for="activityImage"]').textContent = t.imageLabel;
 
     document.getElementById ("activity-loader").innerHTML = `
         <img src="assets/icono-agregar.png" alt="Add" class="button-icon">
-        ${t.botonAgregar}
+        ${t.addButton}
     `;
 
-    document.getElementById ("general-error-message").innerHTML = t.mensajeError;
+    document.getElementById ("general-error-message").innerHTML = t.errorMessage;
 
     const listaSobreMi = document.getElementById ("about-me");
     listaSobreMi.innerHTML = "";
 
-    t.sobreMiTexto.forEach (texto => {
+    t.aboutMeText.forEach (texto => {
 
         const li = document.createElement ("li");
         li.textContent = texto;

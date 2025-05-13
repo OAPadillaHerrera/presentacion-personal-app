@@ -1,5 +1,13 @@
 
 
+/*
+  models.js – Class definitions for "presentacion-personal-app"
+
+  Contains:
+  - Activity: A class representing a user-defined activity with title, description, and image.
+  - Repository: A class that manages activity persistence using localStorage.
+*/
+
 class Activity {
 
     constructor (id, title, description, imgUrl) {
@@ -17,18 +25,18 @@ class Repository {
     
     constructor () {
 
-        const data = JSON.parse (localStorage.getItem ('actividades')) || [];
+        const data = JSON.parse (localStorage.getItem ('activities')) || [];
         this.activities = data.map (obj => new Activity (obj.id, obj.title, obj.description, obj.imgUrl));
 
         this.nextId = this.activities.length > 0
-        ? Math.max (...this.activities.map(a => a.id)) + 1
+        ? Math.max (...this.activities.map (a => a.id)) + 1
         : 1;
 
     }
 
     saveToLocalStorage () {
 
-        localStorage.setItem ('actividades', JSON.stringify (this.activities));
+        localStorage.setItem ('activities', JSON.stringify (this.activities));
 
     }
 
