@@ -1,109 +1,107 @@
 
 
-/* actividades.js – Gestión dinámica de actividades interactivas en la interfaz web
+/* activities.js – Dynamic management of interactive activities on the web interface
+   This file handles the logic related to creating, 
+   displaying, and deleting activities within the graphical user interface.
+   It relies on a `Repository` class that manages activities in memory 
+   (without persistence).
 
-   Este archivo se encarga de la lógica relacionada con la creación, 
-   visualización y eliminación de actividades en la interfaz gráfica del usuario. 
-   Se apoya en una clase `Repository` que gestiona las actividades en memoria 
-   (sin persistencia).
+   The included functions allow:
 
-   Las funciones incluidas permiten:
-
-   - Insertar actividades en el DOM a partir de los datos almacenados.
-   - Validar entradas del formulario de creación.
-   - Crear nuevas actividades con datos ingresados por el usuario.
-   - Eliminar actividades existentes de forma dinámica.
+   - Inserting activities into the DOM based on stored data.
+   - Validating form inputs for activity creation.
+   - Creating new activities with user-provided data.
+   - Dynamically deleting existing activities.
    
-   Este archivo se integra con el frontend de la página, permitiendo una experiencia 
-   interactiva y sin recargas para el usuario.
-
+   This file integrates with the frontend of the webpage, enabling an 
+   interactive and reload-free user experience.
 */
 
-const repositorio = new Repository ();
+const repository = new Repository ();
 
-function manejadorEliminar (event) {
+function deleteHandler (event) {
 
-    const botónId = event.target.id;
-    repositorio.deleteActivity (Number (botónId));
-    insertarActividades ();
+  const buttonId = event.target.id;
+  repository.deleteActivity (Number (buttonId));
+  insertActivities ();
 
 }
 
-function construirActividad (activity) {
+function buildActivity (activity) {
 
     const {id, title, description, imgUrl } = activity;
-    const contenedorTarjeta = document.createElement ('div');
-    const tituloElemento = document.createElement ('h3');
-    const descripcionElemento = document.createElement ('p');
-    const imagenElemento = document.createElement ('img');
-    const eliminarActividades = document.createElement ('button');
+    const cardContainer = document.createElement ('div');
+    const titleElement = document.createElement ('h3');
+    const descriptionElement = document.createElement ('p');
+    const imageElement = document.createElement ('img');
+    const deleteActivities = document.createElement ('button');
 
-    tituloElemento.innerHTML = title;
-    descripcionElemento.innerHTML = description;
-    imagenElemento.src = imgUrl;
-    imagenElemento.alt = `Imagen de ${title}`;
+    titleElement.innerHTML = title;
+    descriptionElement.innerHTML = description;
+    imageElement.src = imgUrl;
+    imageElement.alt = `Image of ${title}`;
 
-    contenedorTarjeta.classList.add ("card-container");
-    contenedorTarjeta.appendChild (tituloElemento);
-    contenedorTarjeta.appendChild (descripcionElemento);
-    contenedorTarjeta.appendChild (imagenElemento);
+    cardContainer.classList.add ("card-container");
+    cardContainer.appendChild (titleElement);
+    cardContainer.appendChild (descriptionElement);
+    cardContainer.appendChild (imageElement);
 
-    eliminarActividades.innerHTML = "X";
-    eliminarActividades.classList.add ("botonborrar");
-    eliminarActividades.id = id;
-    eliminarActividades.addEventListener ("click", manejadorEliminar);
+    deleteActivities.innerHTML = "X";
+    /*deleteActivities.classList.add ("delete-button");*/
+    deleteActivities.id = id;
+    deleteActivities.addEventListener ("click", deleteHandler);
 
-    contenedorTarjeta.appendChild (eliminarActividades);
+    cardContainer.appendChild (/*eliminarActividades*/deleteActivities);
 
-    return contenedorTarjeta;
+    return cardContainer;
 
 }
 
-function insertarActividades () {
+function insertActivities () {
 
-    const contenedorTarjetas = document.querySelector ("#my-activities-container");
-    contenedorTarjetas.innerHTML = "";
+    const containerCards = document.querySelector ("#my-activities-container");
+    containerCards.innerHTML = "";
 
-    const todasLasActividades = repositorio.getAllActivities ().map (construirActividad);
+    const allActivities = /*repositorio*/repository.getAllActivities ().map (/*construirActividad*/buildActivity);
 
-    todasLasActividades.forEach ((element) => {
+    allActivities.forEach ((element) => {
 
-        contenedorTarjetas.appendChild (element);
+      containerCards.appendChild (element);
 
     });
 
 }
 
-const textoRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s.,;:()¿?!¡'"-]{3,}$/;
-const imagenRegex = /\.(jpg|jpeg|png)$/i;
+const textRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s.,;:()¿?!¡'"-]{3,}$/;
+const imageRegex = /\.(jpg|jpeg|png)$/i;
 
-function obtenerInputs () {
+function getInputs () {
 
   return {
 
-    nombreInput: document.getElementById ("activityName"),
-    descripcionInput: document.getElementById ("activityDescription"),
-    imagenInput: document.getElementById ("activityImage")
+    nameInput: document.getElementById ("activityName"),
+    descriptionInput: document.getElementById ("activityDescription"),
+    imageInput: document.getElementById ("activityImage")
 
   };
 
 }
 
-function obtenerValoresLimpios () {
+function getCleanValues () {
 
-  const { nombreInput, descripcionInput, imagenInput } = obtenerInputs();
+  const { nameInput, descriptionInput, imageInput } = getInputs ();
 
   return {
 
-    nombre: nombreInput.value.trim (),
-    descripcion: descripcionInput.value.trim (),
-    imagen: imagenInput.value.trim ()
+    name: nameInput.value.trim (),
+    description: descriptionInput.value.trim (),
+    image: imageInput.value.trim ()
 
   };
 
 }
 
-function limpiarErrores (inputs) {
+function cleanErrors (inputs) {
 
   inputs.forEach (input => input.classList.remove ("input-error"));
 
@@ -113,69 +111,60 @@ function handler (event) {
 
   event.preventDefault ();
 
-  const { nombreInput, descripcionInput, imagenInput } = obtenerInputs ();
-  const { nombre, descripcion, imagen } = obtenerValoresLimpios ();
+  const { nameInput, descriptionInput, imageInput } = getInputs ();
+  const { name, description, image } =  getCleanValues ();
 
-  const mensajeGeneral = document.getElementById ("general-error-message");
-  let hayError = false;
+  const generalMessage = document.getElementById ("general-error-message");
+  let ifError = false;
 
-  limpiarErrores ([nombreInput, descripcionInput, imagenInput]);
+  cleanErrors ([nameInput, descriptionInput, imageInput]);
 
-  if (!textoRegex.test (nombre)) {
+  if (!textRegex.test (name)) {
 
-    nombreInput.classList.add ("input-error");
-    hayError = true;
-
-  }
-
-  if (!textoRegex.test (descripcion)) {
-
-    descripcionInput.classList.add("input-error");
-    hayError = true;
-  }
-
-  if (!imagenRegex.test (imagen)) {
-
-    imagenInput.classList.add ("input-error");
-    hayError = true;
+    nameInput.classList.add ("input-error");
+    ifError = true;
 
   }
 
-  if (hayError) {
+  if (!textRegex.test (description)) {
 
-    mensajeGeneral.classList.remove ("hidden");
+    descriptionInput.classList.add ("input-error");
+    ifError = true;
+
+  }
+
+  if (!imageRegex.test (image)) {
+
+    imageInput.classList.add ("input-error");
+    ifError = true;
+
+  }
+
+  if (ifError) {
+
+    generalMessage.classList.remove ("hidden");
     return;
 
   } else {
 
-    mensajeGeneral.classList.add ("hidden");
+    generalMessage.classList.add ("hidden");
 
-    localStorage.removeItem ("nombreActividad");
-    localStorage.removeItem ("descripcionActividad");
-    localStorage.removeItem ("imagenActividad");
+    localStorage.removeItem ("activityName");
+    localStorage.removeItem ("activityDescription");
+    localStorage.removeItem ("activityImage");
 
   }
 
-  repositorio.createActivity (nombre, descripcion, imagen);
-  insertarActividades ();
+  repository.createActivity (name, description, image);
+  insertActivities ();
 
-  nombreInput.value = "";
-  descripcionInput.value = "";
-  imagenInput.value = "";
+  nameInput.value = "";
+  descriptionInput.value = "";
+  imageInput.value = "";
 
-  limpiarErrores ([nombreInput, descripcionInput, imagenInput]);
+ cleanErrors ([nameInput, descriptionInput, imageInput]);
 
-  const boton = document.getElementById ("activity-loader");
-
-  if (hayError) {
-
-    boton.classList.add ("boton-inactivo");
-
-  } else {
-
-    boton.classList.remove ("boton-inactivo");
-    
-  }
+  const button = document.getElementById ("activity-loader");
 
 }
 

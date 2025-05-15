@@ -98,31 +98,31 @@ changeLanguage (idiomaActual);
  const descripcionInput = document.getElementById ("activityDescription");
  const imagenInput = document.getElementById ("activityImage");
 
- const nombre = localStorage.getItem ("nombreActividad");
- const descripcion = localStorage.getItem ("descripcionActividad");
- const imagen = localStorage.getItem ("imagenActividad");
+ const nombre = localStorage.getItem ("activityName");
+ const descripcion = localStorage.getItem ("activityDescription");
+ const imagen = localStorage.getItem ("activityImage");
 
  if (nombre) nombreInput.value = nombre;
  if (descripcion) descripcionInput.value = descripcion;
  if (imagen) imagenInput.value = imagen;
 
  nombreInput.addEventListener ("input", () =>
-    localStorage.setItem ("nombreActividad", nombreInput.value)
+    localStorage.setItem ("activityName", nombreInput.value)
  );
 
  descripcionInput.addEventListener ("input", () =>
-    localStorage.setItem ("descripcionActividad", descripcionInput.value)
+    localStorage.setItem ("activityDescription", descripcionInput.value)
  );
 
  imagenInput.addEventListener ("input", () =>
-    localStorage.setItem ("imagenActividad", imagenInput.value)
+    localStorage.setItem ("activityImage", imagenInput.value)
  );
 
- insertarActividades ();
+ insertActivities ();
 
- const botonAgregar = document.getElementById ("activity-loader");
+ const addButton = document.getElementById ("activity-loader");
 
- botonAgregar.addEventListener ("click", handler);
+ addButton.addEventListener ("click", handler);
     
 });
 
