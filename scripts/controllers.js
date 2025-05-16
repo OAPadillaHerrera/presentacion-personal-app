@@ -47,11 +47,10 @@ function buildActivity (activity) {
     cardContainer.appendChild (imageElement);
 
     deleteActivities.innerHTML = "X";
-    /*deleteActivities.classList.add ("delete-button");*/
     deleteActivities.id = id;
     deleteActivities.addEventListener ("click", deleteHandler);
 
-    cardContainer.appendChild (/*eliminarActividades*/deleteActivities);
+    cardContainer.appendChild (deleteActivities);
 
     return cardContainer;
 
@@ -62,7 +61,7 @@ function insertActivities () {
     const containerCards = document.querySelector ("#my-activities-container");
     containerCards.innerHTML = "";
 
-    const allActivities = /*repositorio*/repository.getAllActivities ().map (/*construirActividad*/buildActivity);
+    const allActivities = repository.getAllActivities ().map (buildActivity);
 
     allActivities.forEach ((element) => {
 

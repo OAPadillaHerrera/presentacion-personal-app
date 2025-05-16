@@ -168,7 +168,7 @@ h3 {
 
 }
 
-#about-me li {
+/*#about-me li {
 
   color: white;
   text-align: justify;
@@ -178,6 +178,26 @@ h3 {
 }
 
 #about-me li::before {
+
+  content: "●";
+  color: #00BFFF;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+
+}*/
+
+#about-me {
+
+  color: white;
+  text-align: justify;
+  padding-left: 20px;
+  position: relative;
+  
+}
+
+#about-me::before {
 
   content: "●";
   color: #00BFFF;

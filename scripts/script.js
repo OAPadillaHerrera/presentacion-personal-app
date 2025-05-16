@@ -1,18 +1,18 @@
 
 
-/* script.js – Animación de bienvenida y gestión del cambio de idioma
-   
-   Este archivo contiene la lógica para mostrar un mensaje de bienvenida 
-   animado con efecto "máquina de escribir", y permite cambiar dinámicamente 
-   el idioma del sitio web (español / inglés) usando los textos definidos en 
-   languages.js. Se actualizan títulos, etiquetas y listas de contenido sin 
-   necesidad de recargar la página.
+/* script.js – Welcome animation and language switching
+
+   This file contains the logic to display an animated welcome message 
+   using a "typewriter" effect, and to dynamically switch the website’s 
+   language (Spanish/English) using the texts defined in languages.js. 
+   It updates headings, labels, and content lists without needing 
+   to reload the page.
 
 */
 
 let timeoutId = null;  
 
-function escribirTexto (elemento, texto, velocidad, callback) {
+function writeText (element, text, speed, callback) {
 
     let i = 0;
 
@@ -23,15 +23,15 @@ function escribirTexto (elemento, texto, velocidad, callback) {
 
     }
 
-    document.getElementById (elemento).innerHTML = ""; 
+    document.getElementById (element).innerHTML = ""; 
 
-    function escribir () {
+    function write () {
 
-        if (i < texto.length) {
+        if (i < text.length) {
 
-            document.getElementById (elemento).innerHTML += texto.charAt (i);
+            document.getElementById (element).innerHTML += text.charAt (i);
             i++;
-            timeoutId = setTimeout (escribir, velocidad);
+            timeoutId = setTimeout (write, speed);
 
         } else if (callback) {            
 
@@ -40,21 +40,21 @@ function escribirTexto (elemento, texto, velocidad, callback) {
         }
     }
 
-    escribir ();
+    write ();
     
 }
 
-function iniciarAnimacion () {
+function startAnimation () {
 
-    escribirTexto ("welcome", texts [idiomaActual].welcome || "Bienvenidos a mi Página Web!", 150);
+    writeText ("welcome", texts [currentLanguage].welcome || "Bienvenidos a mi Página Web!", 150);
 
 }
 
-let idiomaActual = "es";
+let currentLanguage = "es";
 
 function changeLanguage (language) {
 
-    idiomaActual = language;
+    currentLanguage = language;
     const t = texts [language]
 
     document.getElementById ("name").textContent = t.name;
@@ -75,47 +75,44 @@ function changeLanguage (language) {
 
     document.getElementById ("general-error-message").innerHTML = t.errorMessage;
 
-    const listaSobreMi = document.getElementById ("about-me");
-    listaSobreMi.innerHTML = "";
+    document.getElementById("about-me").textContent = t.aboutMeText[0];
 
-    t.aboutMeText.forEach (texto => {
-
-        const li = document.createElement ("li");
-        li.textContent = texto;
-        listaSobreMi.appendChild (li);
-
-    });
-
-    iniciarAnimacion();
+    startAnimation ();
 
 }
 
 document.addEventListener ("DOMContentLoaded", () => {
 
-changeLanguage (idiomaActual);
+changeLanguage (currentLanguage);
 
- const nombreInput = document.getElementById ("activityName");
- const descripcionInput = document.getElementById ("activityDescription");
- const imagenInput = document.getElementById ("activityImage");
+ const nameInput = document.getElementById ("activityName");
+ const descriptionInput = document.getElementById ("activityDescription");
+ const imageInput = document.getElementById ("activityImage");
 
- const nombre = localStorage.getItem ("activityName");
- const descripcion = localStorage.getItem ("activityDescription");
- const imagen = localStorage.getItem ("activityImage");
+ const name = localStorage.getItem ("activityName");
+ const description = localStorage.getItem ("activityDescription");
+ const image = localStorage.getItem ("activityImage");
 
- if (nombre) nombreInput.value = nombre;
- if (descripcion) descripcionInput.value = descripcion;
- if (imagen) imagenInput.value = imagen;
+ if (name) nameInput.value = name;
+ if (description) descriptionInput.value = description;
+ if (image) imageInput.value = image;
 
- nombreInput.addEventListener ("input", () =>
-    localStorage.setItem ("activityName", nombreInput.value)
+nameInput.addEventListener ("input", () =>
+
+    localStorage.setItem ("activityName", nameInput.value)
+
  );
 
- descripcionInput.addEventListener ("input", () =>
-    localStorage.setItem ("activityDescription", descripcionInput.value)
+descriptionInput.addEventListener ("input", () =>
+
+    localStorage.setItem ("activityDescription", descriptionInput.value)
+
  );
 
- imagenInput.addEventListener ("input", () =>
-    localStorage.setItem ("activityImage", imagenInput.value)
+ imageInput.addEventListener ("input", () =>
+
+    localStorage.setItem ("activityImage", imageInput.value)
+
  );
 
  insertActivities ();
@@ -126,9 +123,9 @@ changeLanguage (idiomaActual);
     
 });
 
-function animarAparicionTitulos () { 
+function animateTitleAppearance () { 
 
-    const titulos = [
+    const titles = [
 
         document.getElementById ("name"),
         document.getElementById ("title"),
@@ -136,7 +133,7 @@ function animarAparicionTitulos () {
 
     ];
 
-    titulos.forEach ((title, index) => {
+   titles.forEach ((title, index) => {
 
         setTimeout (() => {
 
@@ -149,7 +146,7 @@ function animarAparicionTitulos () {
 
 }
 
-document.addEventListener ("DOMContentLoaded", animarAparicionTitulos);
+document.addEventListener ("DOMContentLoaded", animateTitleAppearance);
 
 
 
