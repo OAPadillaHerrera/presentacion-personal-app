@@ -42,17 +42,17 @@ h1 {
 }
 
 h2 {
-
+  
   font-size: 1.5em;
-  color: white;
+  color: yellow;
 
 }
 
 h3 {
 
   padding-top: 20px;
-  font-size: 2.0em; 
-  color: yellow;
+  font-size: 1.5em;  
+  color: white;  
 
 }
 
@@ -167,26 +167,6 @@ h3 {
   margin: 0;
 
 }
-
-/*#about-me li {
-
-  color: white;
-  text-align: justify;
-  padding-left: 20px;
-  position: relative;
-
-}
-
-#about-me li::before {
-
-  content: "●";
-  color: #00BFFF;
-  font-size: 1.2em;
-  position: absolute;
-  left: 0;
-  top: 0.2em;
-
-}*/
 
 #about-me {
 
@@ -308,6 +288,7 @@ h3 {
   background-color: black;
   text-align: center;
   margin-top: 1.5%;
+  margin-bottom: 1.5%;
 
 }
 
@@ -317,7 +298,9 @@ h3 {
   flex-direction: column;
   width: 100%;
   max-width: 600px;
-  margin: 10px 0;
+  /*margin: 10px 0;*/
+  margin-top: 1%;
+  margin-bottom: 4%;
 
 }
 
