@@ -14,7 +14,7 @@ const texts = {
 
   es: {
 
-    name: "ÓSCAR PADILLA",
+    name: "Óscar Padilla",
     title: "Desarrollador Web Full Stack",
     welcome: "¡Bienvenidos a mi Página Web!",
     aboutMeTitle: "Sobre Mi",
@@ -37,7 +37,7 @@ const texts = {
 
   en: {
 
-    name: "OSCAR PADILLA",
+    name: "Oscar Padilla",
     title: "Full Stack Developer",
     welcome: "Welcome to my Website!",
     aboutMeTitle: "About Me",

@@ -14,6 +14,12 @@
 
 }
 
+html {
+
+  font-size: 16px;
+
+}
+
 body {
 
   margin: 5%;
@@ -34,7 +40,7 @@ button {
 
 h1 {
 
-  padding-top: 10px;
+  padding-top: 0.625em;
   font-size: 1.5em;
   font-weight: bold;
   color: white;
@@ -42,7 +48,7 @@ h1 {
 }
 
 h2 {
-  
+
   font-size: 1.5em;
   color: yellow;
 
@@ -50,20 +56,29 @@ h2 {
 
 h3 {
 
-  padding-top: 20px;
-  font-size: 1.5em;  
-  color: white;  
+  padding-top: 1.25em;
+  font-size: 1.5em;
+  color: white;
 
 }
 
 #welcome {
 
-  margin-top: 0.5%;
-  margin-bottom: 11%;
+  margin-top: 0.08em;
+  margin-right: 0;
+  margin-bottom: 1em;
+  margin-left: 0;
 
 }
 
-#name,
+#name {
+
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+
+}
+
 #title {
 
   margin: 0;
@@ -84,21 +99,21 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 15px;
+  padding: 1.25em 0 0.9375em;
   background-color: #111;
   text-align: center;
-  gap: 10px;
-  margin-bottom: 0%;
+  gap: 0.625em;
+  margin-bottom: 0;
 
 }
 
 .profile-photo {
 
-  width: 140px;
-  height: 140px;
+  width: 8.75em;
+  height: 8.75em;
   border-radius: 50%;
-  border: 4px solid #007bff;
-  margin-bottom: 1.0%;
+  border: 0.25em solid #007bff;
+  margin-bottom: 1.5em;
 
 }
 
@@ -108,12 +123,14 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  gap: 20px;
-  margin-top: 2%;
-  margin-bottom: 1.5%;
-  padding: 2%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  gap: 1.25em;
+  margin-top: 0.32em;
+  margin-right: 0;
+  margin-bottom: 0.24em;
+  margin-left: 0;
+  padding: 0.32em;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.5em;
 
 }
 
@@ -121,10 +138,10 @@ h3 {
 
   color: black;
   background-color: white;
-  border: 1px solid #555;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  border: 0.0625em solid #555;
+  padding: 0.3125em 0.625em;
+  border-radius: 0.25em;
+  font-size: 0.9em;
 
 }
 
@@ -142,11 +159,11 @@ h3 {
   flex-direction: column;
   align-items: center;
   background-color: black;
-  margin-top: 4%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%;
-  border-radius: 15px;
+  margin-top: 2em;
+  margin-right: 1.6em;
+  margin-bottom: 3em;
+  margin-left: 1.6em;
+  border-radius: 0.9375em;
 
 }
 
@@ -154,17 +171,11 @@ h3 {
 
   display: flex;
   background-color: black;
-  margin: 20px;
-  margin-bottom: 1%;
+  margin-top: 1.25em;
+  margin-right: 1.25em;
+  margin-bottom: 0.25em;
+  margin-left: 1.25em;
   text-align: center;
-
-}
-
-#about-me {
-
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
 
 }
 
@@ -172,9 +183,9 @@ h3 {
 
   color: white;
   text-align: justify;
-  padding-left: 20px;
+  padding-left: 1.25em;
   position: relative;
-  
+
 }
 
 #about-me::before {
@@ -195,33 +206,38 @@ h3 {
   justify-content: center;
   align-items: stretch;
   background-color: black;
-  margin: 2% auto 5%;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-radius: 15px;
-  gap: 16px;
+  margin-top: 0.32em;
+  margin-right: 1.6em;
+  margin-bottom: 3em;
+  margin-left: 1.6em;
+  border-radius: 0.9375em;
+  gap: 1em;
 
 }
 
 .my-skill-item {
 
   display: flex;
+  flex-wrap: wrap;
   background-color: black;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
-  margin: 0.08% 0.5%;
-  margin-bottom: 1.5%;
+  border-radius: 0.9375em;
+  margin-top: 0.0128em;
+  margin-right: 0.08em;
+  margin-bottom: 0.24em;
+  margin-left: 0.08em;
 
 }
 
 .my-skill-item1 {
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
   background-color: black;
-  width: 200px;
+  width: 15.625em;
   margin: 0.1em;
   text-align: center;
 
@@ -229,8 +245,10 @@ h3 {
 
 .my-skills-margins {
 
-  margin-top: 10%;
-  margin-bottom: 1%;
+  margin-top: 1em;
+  margin-right: 0;
+  margin-bottom: 0.05em;
+  margin-left: 0;
 
 }
 
@@ -243,7 +261,7 @@ h3 {
 .my-skills-effect:hover {
 
   transform: scale(1.5);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
 
 }
 
@@ -264,7 +282,7 @@ h3 {
 
   margin-top: 0.001em;
   color: red;
-  font-size: 1.25em;  
+  font-size: 1.25em;
 
 }
 
@@ -274,21 +292,25 @@ h3 {
   flex-direction: column;
   align-items: center;
   background-color: black;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-radius: 15px;
+  margin-top: 0;
+  margin-right: 1.6em;
+  margin-bottom: 0;
+  margin-left: 1.6em;
+  border-radius: 0.9375em;
 
 }
 
 .form-button-item {
 
   width: 100%;
-  max-width: 600px;
-  padding: 10px;
+  max-width: 37.5em;
+  padding: 0.625em;
   background-color: black;
   text-align: center;
-  margin-top: 1.5%;
-  margin-bottom: 1.5%;
+  margin-top: 1.2em;
+  margin-right: 0;
+  margin-bottom: 0.48em;
+  margin-left: 0;
 
 }
 
@@ -297,10 +319,11 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 600px;
-  /*margin: 10px 0;*/
-  margin-top: 1%;
-  margin-bottom: 4%;
+  max-width: 37.5em;
+  margin-top: 0.16em;
+  margin-right: 0;
+  margin-bottom: 1.28em;
+  margin-left: 0;
 
 }
 
@@ -310,14 +333,14 @@ h3 {
   background-color: black;
   color: white;
   width: 100%;
-  padding: 10px;
+  padding: 0.625em;
   text-align: justify;
 
 }
 
 textarea.form-button-input-width {
 
-  height: 100px;
+  height: 6.25em;
   resize: none;
 
 }
@@ -331,19 +354,24 @@ label {
 
 .button-item {
 
-  margin: 1% 0 3%;
+  margin-top: 0.32em;
+  margin-right: 0;
+  margin-bottom: 0.96em;
+  margin-left: 0;
   display: flex;
   justify-content: center;
+
 }
 
 button {
 
   color: black;
   background-color: white;
-  padding: 10px 10px;
+  padding: 0.625em;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25em;
 
+  
 }
 
 #activity-loader:active {
@@ -362,10 +390,13 @@ button {
   background-color: black;
   color: white;
   text-align: center;
-  margin: 0.5% 0 6%;
-  padding: 16px;
+  margin-top: 0.08em;
+  margin-right: 0;
+  margin-bottom: 1.92em;
+  margin-left: 0;
+  padding: 1em;
   border-radius: 3%;
-  gap: 16px;
+  gap: 1em;
 
 }
 
@@ -375,9 +406,10 @@ button {
   justify-content: center;
   align-items: center;
   background-color: black;
-  margin-top: 0.5%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-top: 0.08em;
+  margin-right: 1.6em;
+  margin-bottom: 0;
+  margin-left: 1.6em;
 
 }
 
@@ -387,51 +419,52 @@ button {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 300px;
-  padding: 16px;
+  max-width: 18.75em;
+  padding: 1em;
   background-color: #111;
-  border: 1px solid #333;
-  border-radius: 8px;
+  border: 0.0625em solid #333;
+  border-radius: 0.5em;
   box-sizing: border-box;
 
 }
 
 .card-container h3 {
 
-  margin-bottom: 5px;
+  margin-bottom: 0.3125em;
   color: yellow;
 
 }
 
 .card-container p {
 
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
   color: white;
   text-align: justify;
+
 }
 
 .card-container img {
 
   display: block;
   width: 100%;
-  max-width: 300px;
+  max-width: 18.75em;
   height: auto;
-  margin-bottom: 10px;
-  border: 2px solid #444;
+  margin-bottom: 0.625em;
+  border: 0.125em solid #444;
 
 }
 
 img {
 
-  width: 212px;
-  height: 276px;
+  width: 13.25em;
+  height: 17.25em;
   border-radius: 10%;
 
 }
 
 .input-error {
 
-  border: 2px solid red;
+  border: 0.125em solid red;
   background-color: #330000;
 
 }
@@ -440,7 +473,7 @@ img {
 
   color: red;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 0.625em;
 
 }
 
@@ -453,7 +486,7 @@ img {
 .hidden-title {
 
   opacity: 0;
-  transform: translateY (20px);
+  transform: translateY(1.25em);
   transition: opacity 0.6s ease, transform 0.6s ease;
 
 }
@@ -461,36 +494,35 @@ img {
 .visible-title {
 
   opacity: 1;
-  transform: translateY (0);
+  transform: translateY(0);
 
 }
 
 .flag-icon {
 
-  width: 26px;
-  height: 20px;
-  margin-right: 6px;
+  width: 1.625em;
+  height: 1.25em;
+  margin-right: 0.375em;
   vertical-align: middle;
-  border: 1px solid #ccc;
-  border-radius: 2px;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.125em;
 
 }
 
 .button-icon {
 
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.5em;
   vertical-align: middle;
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
 
   h1,
   h2,
   h3 {
-
     font-size: 1.1em;
     text-align: center;
 
@@ -510,7 +542,7 @@ img {
   .form-button-container,
   .flex-container-misactfa {
 
-    padding: 10px;
+    padding: 0.625em;
     flex-direction: column;
     align-items: center;
 
@@ -519,14 +551,14 @@ img {
   .my-skill-item1 {
 
     width: 90%;
-    margin: 10px auto;
+    margin: 0.625em auto;
 
   }
 
   .profile-photo {
 
-    width: 100px;
-    height: 100px;
+    width: 6.25em;
+    height: 6.25em;
 
   }
 
@@ -547,9 +579,8 @@ img {
     height: 3.5em;
 
   }
-
+  
 }
-
 
 
 

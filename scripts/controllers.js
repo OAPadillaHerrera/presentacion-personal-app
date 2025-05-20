@@ -161,10 +161,6 @@ function handler (event) {
   descriptionInput.value = "";
   imageInput.value = "";
 
- cleanErrors ([nameInput, descriptionInput, imageInput]);
-
-  const button = document.getElementById ("activity-loader");
-
 }
 
 
