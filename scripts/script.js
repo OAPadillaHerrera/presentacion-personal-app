@@ -1,47 +1,54 @@
 
 
-/* script.js – Welcome animation and language switching
+/* 
+  script.js – Dynamic welcome animation, language switching, 
+  title animation, and localStorage handling
 
-   This file contains the logic to display an animated welcome message 
-   using a "typewriter" effect, and to dynamically switch the website’s 
-   language (Spanish/English) using the texts defined in languages.js. 
-   It updates headings, labels, and content lists without needing 
-   to reload the page.
+  This script provides:
+  - A typewriter-style animated welcome message
+  - Dynamic language switching (Spanish/English) using texts from languages.js
+  - Real-time updates to all major page sections (headings, labels, button text, about-me content)
+  - Smooth title fade-in animation for key sections
+  - LocalStorage support to persist form input data across sessions
+  - Initialization of existing activities via insertActivities()
 
+  Enhances the interactivity and accessibility of the presentacion-personal-app site.
 */
 
 let timeoutId = null;  
 
-function writeText (element, text, speed, callback) {
+function writeText (elementId, text, speed, callback) {
 
-    let i = 0;
+  let i = 0;
+  const el = document.getElementById (elementId);
 
-    if (timeoutId) {
+  if (timeoutId) {
 
-        clearTimeout (timeoutId);
-        timeoutId = null;
+    clearTimeout (timeoutId);
+    timeoutId = null;
+
+  }
+
+  el.innerHTML = "";
+
+  function write () {
+
+    if (i < text.length) {
+
+      el.innerHTML += text.charAt (i);
+      i++;
+      timeoutId = setTimeout (write, speed);
+
+    } else if (callback) {
+
+      timeoutId = setTimeout (callback, 1000);
 
     }
 
-    document.getElementById (element).innerHTML = ""; 
+  }
 
-    function write () {
+  write ();
 
-        if (i < text.length) {
-
-            document.getElementById (element).innerHTML += text.charAt (i);
-            i++;
-            timeoutId = setTimeout (write, speed);
-
-        } else if (callback) {            
-
-            timeoutId = setTimeout (callback, 1000);
-
-        }
-    }
-
-    write ();
-    
 }
 
 function startAnimation () {
@@ -83,44 +90,47 @@ function changeLanguage (language) {
 
 document.addEventListener ("DOMContentLoaded", () => {
 
-changeLanguage (currentLanguage);
+  changeLanguage (currentLanguage);
 
- const nameInput = document.getElementById ("activityName");
- const descriptionInput = document.getElementById ("activityDescription");
- const imageInput = document.getElementById ("activityImage");
+  animateTitleAppearance ();
 
- const name = localStorage.getItem ("activityName");
- const description = localStorage.getItem ("activityDescription");
- const image = localStorage.getItem ("activityImage");
+  const nameInput = document.getElementById ("activityName");
+  const descriptionInput = document.getElementById ("activityDescription");
+  const imageInput = document.getElementById ("activityImage");
 
- if (name) nameInput.value = name;
- if (description) descriptionInput.value = description;
- if (image) imageInput.value = image;
+  const name = localStorage.getItem ("activityName");
+  const description = localStorage.getItem ("activityDescription");
+  const image = localStorage.getItem ("activityImage");
 
-nameInput.addEventListener ("input", () =>
+  if (name) nameInput.value = name;
+  if (description) descriptionInput.value = description;
+  if (image) imageInput.value = image;
+
+  nameInput.addEventListener ("input", () =>
 
     localStorage.setItem ("activityName", nameInput.value)
 
- );
+  );
 
-descriptionInput.addEventListener ("input", () =>
+  descriptionInput.addEventListener ("input", () =>
 
     localStorage.setItem ("activityDescription", descriptionInput.value)
 
- );
+  );
 
- imageInput.addEventListener ("input", () =>
+  imageInput.addEventListener ("input", () =>
 
     localStorage.setItem ("activityImage", imageInput.value)
 
- );
+  );
 
- insertActivities ();
+  insertActivities ();
 
- const addButton = document.getElementById ("activity-loader");
+  const addButton = document.getElementById ("activity-loader");
+  addButton.addEventListener ("click", handler);
 
- addButton.addEventListener ("click", handler);
-    
+  animateTitleAppearance();
+
 });
 
 function animateTitleAppearance () { 
@@ -146,7 +156,6 @@ function animateTitleAppearance () {
 
 }
 
-document.addEventListener ("DOMContentLoaded", animateTitleAppearance);
 
 
 

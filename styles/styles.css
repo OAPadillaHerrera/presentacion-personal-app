@@ -3,12 +3,14 @@
 /*
   styles.css – Base and responsive styles for the "presentacion-personal-app" site
 
-  Defines the visual appearance of the site: Flexbox layout, terminal-style typography,
-  form fields, dynamic card presentation, and general visual consistency. All organized
-  by functional blocks.
+  Defines the visual appearance and layout of the site using Flexbox and consistent spacing units (em, %, px).
+  Includes styling for all major sections: header, language switcher, about me, technologies, activity form, 
+  activity cards, and social media footer. Design emphasizes terminal-style typography and modular structure.
+
+  Styles are organized by functional blocks and include responsive rules for mobile viewports.
 */
 
-* {
+*colgroup{
 
   box-sizing: border-box;
 
@@ -62,30 +64,6 @@ h3 {
 
 }
 
-#welcome {
-
-  margin-top: 0.08em;
-  margin-right: 0;
-  margin-bottom: 1em;
-  margin-left: 0;
-
-}
-
-#name {
-
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-
-}
-
-#title {
-
-  margin: 0;
-  padding: 0;
-
-}
-
 .font-heading {
 
   color: yellow;
@@ -107,6 +85,28 @@ h3 {
 
 }
 
+#welcome {
+
+  margin-top: 0.6em;
+  margin-bottom: 1em;
+  padding: 0;
+  
+}
+
+#name,
+#title {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+#name {
+
+  font-weight: bold;
+
+}
+
 .profile-photo {
 
   width: 8.75em;
@@ -123,12 +123,9 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  gap: 1.25em;
-  margin-top: 0.32em;
-  margin-right: 0;
-  margin-bottom: 0.24em;
-  margin-left: 0;
-  padding: 0.32em;
+  gap: 1em;
+  margin: 0.5em 0 0.5em;
+  padding: 1.1em;
   border: 0.0625em solid #ccc;
   border-radius: 0.5em;
 
@@ -159,10 +156,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   background-color: black;
-  margin-top: 2em;
-  margin-right: 1.6em;
-  margin-bottom: 3em;
-  margin-left: 1.6em;
+  margin: 2em 1.6em 3em;
   border-radius: 0.9375em;
 
 }
@@ -171,10 +165,7 @@ h3 {
 
   display: flex;
   background-color: black;
-  margin-top: 1.25em;
-  margin-right: 1.25em;
-  margin-bottom: 0.25em;
-  margin-left: 1.25em;
+  margin: 1.25em;
   text-align: center;
 
 }
@@ -206,37 +197,35 @@ h3 {
   justify-content: center;
   align-items: stretch;
   background-color: black;
-  margin-top: 0.32em;
-  margin-right: 1.6em;
-  margin-bottom: 3em;
-  margin-left: 1.6em;
+  margin: 0.32em 1.6em 3em;
   border-radius: 0.9375em;
   gap: 1em;
 
 }
 
-.my-skill-item {
+.my-skill-item,
+.my-skill-item1 {
 
   display: flex;
-  flex-wrap: wrap;
   background-color: black;
+  border-radius: 0.9375em;
+
+}
+
+.my-skill-item {
+
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border-radius: 0.9375em;
-  margin-top: 0.0128em;
-  margin-right: 0.08em;
-  margin-bottom: 0.24em;
-  margin-left: 0.08em;
+  margin: 0.0128em 0.08em 0.24em;
 
 }
 
 .my-skill-item1 {
 
-  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  background-color: black;
   width: 15.625em;
   margin: 0.1em;
   text-align: center;
@@ -245,10 +234,7 @@ h3 {
 
 .my-skills-margins {
 
-  margin-top: 1em;
-  margin-right: 0;
-  margin-bottom: 0.05em;
-  margin-left: 0;
+  margin: 1em 0 0.05em;
 
 }
 
@@ -262,6 +248,33 @@ h3 {
 
   transform: scale(1.5);
   box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+
+}
+
+a.tech-link {
+
+  color: red;                   
+  text-decoration: none;         
+  transition: color 0.3s;
+
+}
+
+a.tech-link:visited {
+
+  color: red;   
+                  
+}
+
+a.tech-link:hover {
+
+  color: #00BFFF;               
+  text-decoration: underline;
+
+}
+
+a.tech-link:active {
+
+  color: #00BFFF;  
 
 }
 
@@ -292,10 +305,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   background-color: black;
-  margin-top: 0;
-  margin-right: 1.6em;
-  margin-bottom: 0;
-  margin-left: 1.6em;
+  margin: 0 1.6em;
   border-radius: 0.9375em;
 
 }
@@ -307,10 +317,7 @@ h3 {
   padding: 0.625em;
   background-color: black;
   text-align: center;
-  margin-top: 1.2em;
-  margin-right: 0;
-  margin-bottom: 0.48em;
-  margin-left: 0;
+  margin: 1.2em 0 0.48em;
 
 }
 
@@ -320,10 +327,7 @@ h3 {
   flex-direction: column;
   width: 100%;
   max-width: 37.5em;
-  margin-top: 0.16em;
-  margin-right: 0;
-  margin-bottom: 1.28em;
-  margin-left: 0;
+  margin: 0.16em 0 1.28em;
 
 }
 
@@ -348,16 +352,14 @@ textarea.form-button-input-width {
 label {
 
   margin-top: 1em;
-  color: white;
+  color: green;
+  font-size: 1.25em;
 
 }
 
 .button-item {
 
-  margin-top: 0.32em;
-  margin-right: 0;
-  margin-bottom: 0.96em;
-  margin-left: 0;
+  margin: 0.32em 0 0.96em;
   display: flex;
   justify-content: center;
 
@@ -371,7 +373,6 @@ button {
   border: none;
   border-radius: 0.25em;
 
-  
 }
 
 #activity-loader:active {
@@ -390,10 +391,7 @@ button {
   background-color: black;
   color: white;
   text-align: center;
-  margin-top: 0.08em;
-  margin-right: 0;
-  margin-bottom: 1.92em;
-  margin-left: 0;
+  margin: 0.08em 0 1.92em;
   padding: 1em;
   border-radius: 3%;
   gap: 1em;
@@ -406,10 +404,64 @@ button {
   justify-content: center;
   align-items: center;
   background-color: black;
-  margin-top: 0.08em;
-  margin-right: 1.6em;
-  margin-bottom: 0;
-  margin-left: 1.6em;
+  margin: 0.08em 1.6em 0;
+
+}
+
+.social-footer {
+
+  background-color: black;
+  text-align: center;
+  padding: 1.25em 0;
+  margin-top: 3em;
+  border-radius: 0.25em;
+
+}
+
+.social-container {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.social-link {
+
+  text-decoration: none;
+
+}
+
+.social-icon {
+
+  width: 2.5em;   
+  height: 2.5em;
+  transition: transform 0.3s, filter 0.3s;
+
+}
+
+.social-icon:hover {
+
+  transform: scale(1.1);
+  filter: brightness(1.2);
+
+}
+
+.social-label {
+
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 0.2em;
+  margin-left: 0.5em;
+  margin-right: 1.5em;
+
+}
+
+.text-color {
+
+  color: green;
 
 }
 
@@ -462,6 +514,26 @@ img {
 
 }
 
+.flag-icon {
+
+  width: 1.625em;
+  height: 1.25em;
+  margin-right: 0.375em;
+  vertical-align: middle;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.125em;
+
+}
+
+.button-icon {
+
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+
+}
+
 .input-error {
 
   border: 0.125em solid red;
@@ -498,31 +570,10 @@ img {
 
 }
 
-.flag-icon {
-
-  width: 1.625em;
-  height: 1.25em;
-  margin-right: 0.375em;
-  vertical-align: middle;
-  border: 0.0625em solid #ccc;
-  border-radius: 0.125em;
-
-}
-
-.button-icon {
-
-  width: 1.25em;
-  height: 1.25em;
-  margin-right: 0.5em;
-  vertical-align: middle;
-
-}
-
 @media (max-width: 48em) {
 
-  h1,
-  h2,
-  h3 {
+  h1, h2, h3 {
+
     font-size: 1.1em;
     text-align: center;
 
@@ -581,6 +632,7 @@ img {
   }
   
 }
+
 
 
 

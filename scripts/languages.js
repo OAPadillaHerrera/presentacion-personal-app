@@ -19,7 +19,7 @@ const texts = {
     welcome: "¡Bienvenidos a mi Página Web!",
     aboutMeTitle: "Sobre Mi",
     technologiesTitle: "Tecnologías",
-    activitiesTitle: "Mis Actividades Favoritas",
+    activitiesTitle: "¡Agrega tus actividades favoritas!",
     nameLabel: "Nombre de la actividad",
     descriptionLabel: "Describir la actividad",
     imageLabel: "Link de la imagen",
@@ -32,7 +32,7 @@ const texts = {
     ],
 
     errorMessage: `⚠️ Por favor completa todos los campos correctamente:<br>- Nombre y descripción sin números<br>- Imagen válida con extensión .jpg, .jpeg o .png`
-
+    
   },
 
   en: {
@@ -42,7 +42,7 @@ const texts = {
     welcome: "Welcome to my Website!",
     aboutMeTitle: "About Me",
     technologiesTitle: "Technologies",
-    activitiesTitle: "My Favorite Activities",
+    activitiesTitle: "Add your favorite activities!",
     nameLabel: "Activity name",
     descriptionLabel: "Describe the activity",
     imageLabel: "Image URL",

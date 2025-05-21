@@ -1,21 +1,23 @@
 
 
-/* activities.js – Dynamic management of interactive activities on the web interface
-   This file handles the logic related to creating, 
-   displaying, and deleting activities within the graphical user interface.
-   It relies on a `Repository` class that manages activities in memory 
-   (without persistence).
+/* 
+  activities.js – Interactive activity management for presentacion-personal-app
 
-   The included functions allow:
+  This script handles the creation, validation, display, and deletion of user-defined 
+  activities within the web interface. It integrates closely with the DOM to enable 
+  a smooth, reload-free experience.
 
-   - Inserting activities into the DOM based on stored data.
-   - Validating form inputs for activity creation.
-   - Creating new activities with user-provided data.
-   - Dynamically deleting existing activities.
-   
-   This file integrates with the frontend of the webpage, enabling an 
-   interactive and reload-free user experience.
+  Key features include:
+  - Retrieving input elements and cleaning their values
+  - Validating user input using regular expressions (text and image URL)
+  - Highlighting invalid inputs and displaying contextual error messages
+  - Managing activity data via a Repository class (in-memory storage)
+  - Inserting and dynamically removing activity cards in the DOM
+  - Clearing form fields and removing localStorage values after successful submission
+
+  Provides a modular and responsive frontend interaction model for managing user content.
 */
+
 
 const repository = new Repository ();
 
@@ -30,11 +32,11 @@ function deleteHandler (event) {
 function buildActivity (activity) {
 
     const {id, title, description, imgUrl } = activity;
-    const cardContainer = document.createElement ('div');
-    const titleElement = document.createElement ('h3');
-    const descriptionElement = document.createElement ('p');
-    const imageElement = document.createElement ('img');
-    const deleteActivities = document.createElement ('button');
+    const cardContainer = document.createElement ("div");
+    const titleElement = document.createElement ("h3");
+    const descriptionElement = document.createElement ("p");
+    const imageElement = document.createElement ("img");
+    const deleteActivities = document.createElement ("button");
 
     titleElement.innerHTML = title;
     descriptionElement.innerHTML = description;
@@ -60,14 +62,9 @@ function insertActivities () {
 
     const containerCards = document.querySelector ("#my-activities-container");
     containerCards.innerHTML = "";
-
-    const allActivities = repository.getAllActivities ().map (buildActivity);
-
-    allActivities.forEach ((element) => {
-
-      containerCards.appendChild (element);
-
-    });
+    const fragment = document.createDocumentFragment();
+    repository.getAllActivities().map(buildActivity).forEach(el => fragment.appendChild(el));
+    containerCards.appendChild(fragment);
 
 }
 
@@ -157,9 +154,12 @@ function handler (event) {
   repository.createActivity (name, description, image);
   insertActivities ();
 
-  nameInput.value = "";
-  descriptionInput.value = "";
-  imageInput.value = "";
+  function clearInputs (...inputs) {
+  inputs.forEach (input => input.value = "");
+
+  }
+
+  clearInputs (nameInput, descriptionInput, imageInput);
 
 }
 

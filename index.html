@@ -4,10 +4,13 @@
   index.html – Main structure for the "presentacion-personal-app" site
 
   Defines the overall structure of the page, including:
-  language switch buttons, header with profile photo and title,
-  sections for "About Me", "Technologies", and a dynamic form
-  to add and display user activities. Uses semantic HTML5 elements
-  and standardized class/id naming conventions for maintainability.
+  - Language switch buttons for Spanish and English
+  - Header with profile photo and dynamic titles
+  - "About Me" section
+  - "Technologies" section with linked icons to official documentation
+  - Interactive form to add and display user activities
+  - Footer with social media icons and links (LinkedIn, GitHub)
+  Uses semantic HTML5 elements and standardized class/id naming conventions for clarity and maintainability.
 -->
 
 <!DOCTYPE html>
@@ -41,13 +44,13 @@
 
                 <button onclick = "changeLanguage ('es')">
                     
-                    <img src = "assets/Bandera_España.png" alt = "Spanish" class = "flag-icon"> SPANISH
+                    <img src = "assets/logos/Bandera_España.png" alt = "Spanish" class = "flag-icon"> SPANISH
 
                 </button>
 
                 <button onclick = "changeLanguage ('en')">
                     
-                    <img src = "assets/Bandera_USA.png" alt = "English" class = "flag-icon"> ENGLISH
+                    <img src = "assets/logos/Bandera_USA.png" alt = "English" class = "flag-icon"> ENGLISH
 
                 </button>
 
@@ -95,11 +98,15 @@
 
                         <div class = "my-skills-margins">
 
-                            <img id = "Nest" src = "assets/Nest.png" alt = "NestJS icon" class = "my-skills-effect">
+                            <img id = "Nest" src = "assets/logos/Nest.png" alt = "NestJS icon" class = "my-skills-effect">
 
                         </div>
 
-                        <h3 class = "my-skills-text"> NestJS</h3>
+                        <h3 class = "my-skills-text"> 
+                            
+                            <a href="https://docs.nestjs.com/" target="_blank" class="tech-link">NestJS</a>
+                        
+                        </h3>
 
                     </div>
 
@@ -107,11 +114,15 @@
 
                         <div class = "my-skills-margins">
 
-                            <img id = "React" src = "assets/React.png" alt = "React.js icon" class = "my-skills-effect">
+                            <img id = "React" src = "assets/logos/React.png" alt = "React.js icon" class = "my-skills-effect">
 
                         </div>
 
-                        <h3 class = "my-skills-text"> React.js</h3>
+                        <h3 class = "my-skills-text"> 
+                            
+                            <a href="https://react.dev/" target="_blank" class="tech-link">React.js</a>
+                        
+                        </h3>
 
                     </div>
     
@@ -119,11 +130,15 @@
 
                         <div class = "my-skills-margins">
 
-                            <img id = "TypeScript" src = "assets/TypeScript.png" alt = "TypeScript icon" class = "my-skills-effect">
+                            <img id = "TypeScript" src = "assets/logos/TypeScript.png" alt = "TypeScript icon" class = "my-skills-effect">
 
                         </div>
 
-                        <h3 class = "my-skills-text"> TypeScript</h3>
+                        <h3 class = "my-skills-text"> 
+                            
+                            <a href="https://www.typescriptlang.org/" target="_blank" class="tech-link">TypeScript</a>
+                        
+                        </h3>
 
                     </div>
         
@@ -131,11 +146,15 @@
 
                         <div class = "my-skills-margins">
 
-                            <img id = "Python" src = "assets/Python.png" alt = "Python icon" class = "my-skills-effect">
+                            <img id = "Python" src = "assets/logos/Python.png" alt = "Python icon" class = "my-skills-effect">
 
                         </div>
 
-                        <h3 class = "my-skills-text"> Python</h3>
+                        <h3 class = "my-skills-text"> 
+                            
+                           <a href="https://www.python.org/" target="_blank" class="tech-link">Python</a>
+                        
+                        </h3>
 
                     </div>
 
@@ -186,7 +205,7 @@
 
                     <button id = "activity-loader" type = "button">
                         
-                        <img src = "assets/icono-agregar.png" alt = "Add" class = "button-icon">
+                        <img src = "assets/logos/icono-agregar.png" alt = "Add" class = "button-icon">
                       
                     </button>
 
@@ -207,6 +226,26 @@
     <script src = "scripts/index.js"></script>
     <script src = "scripts/languages.js"></script>
     <script src = "scripts/script.js"></script>
+
+    <footer class="social-footer">
+
+        <div class="social-container">
+
+            <a href="https://www.linkedin.com/in/oscarpadillafswd/" target="_blank" class="social-link">
+            <img src="assets/logos/linkedin.png" alt="LinkedIn logo" class="social-icon">
+            </a>
+
+            <p class="social-label">LinkedIn</p>
+
+            <a href="https://github.com/OAPadillaHerrera" target="_blank" class="social-link">
+            <img src="assets/logos/github.png" alt="GitHub logo" class="social-icon">
+            </a>
+
+            <p class="social-label">GitHub</p>
+
+        </div>
+
+    </footer>
     
     </body>
 
