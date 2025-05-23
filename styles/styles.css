@@ -253,7 +253,7 @@ h3 {
 
 a.tech-link {
 
-  color: red;                   
+  color: red;                 
   text-decoration: none;         
   transition: color 0.3s;
 
@@ -294,7 +294,6 @@ a.tech-link:active {
 .my-skills-text {
 
   margin-top: 0.001em;
-  color: red;
   font-size: 1.25em;
 
 }
@@ -389,7 +388,6 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   background-color: black;
-  color: white;
   text-align: center;
   margin: 0.08em 0 1.92em;
   padding: 1em;
@@ -456,12 +454,6 @@ button {
   margin-top: 0.2em;
   margin-left: 0.5em;
   margin-right: 1.5em;
-
-}
-
-.text-color {
-
-  color: green;
 
 }
 

@@ -45,8 +45,8 @@ function buildActivity (activity) {
 
     cardContainer.classList.add ("card-container");
     cardContainer.appendChild (titleElement);
-    cardContainer.appendChild (descriptionElement);
     cardContainer.appendChild (imageElement);
+    cardContainer.appendChild (descriptionElement);
 
     deleteActivities.innerHTML = "X";
     deleteActivities.id = id;
