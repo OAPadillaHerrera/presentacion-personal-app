@@ -50,7 +50,8 @@ Diseñé, desarrollé e implementé una página web interactiva de presentación
    git clone https://github.com/OAPadillaHerrera/presentacion-personal-app.git
    ```
 2. **Abrir el archivo `index.html` en un navegador.**
-3. ¡Explora la web interactiva! 🚀
+  
+4. ¡Explora la web interactiva! 🚀 en: https://oapadillaherrera.github.io/presentacion-personal-app/
 
 ## 📞 Contacto
 Si deseas conocer más sobre el proyecto o colaborar, ¡contáctame en iambackenddev@gmail.com/oscar.padilla.ha@gmail.com!
