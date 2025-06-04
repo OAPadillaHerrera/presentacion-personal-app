@@ -63,14 +63,11 @@ function changeLanguage (language) {
 
     currentLanguage = language;
     const t = texts [language]
-
     document.getElementById ("name").textContent = t.name;
     document.getElementById ("title").textContent = t.title;
-
     document.querySelectorAll (".font-heading")[0].textContent = t.aboutMeTitle;
     document.querySelectorAll (".font-heading")[1].textContent = t.technologiesTitle;
     document.querySelectorAll (".font-heading")[2].textContent = t.activitiesTitle;
-
     document.querySelector ('label[for="activityName"]').textContent = t.nameLabel;
     document.querySelector ('label[for="activityDescription"]').textContent = t.descriptionLabel;
     document.querySelector ('label[for="activityImage"]').textContent = t.imageLabel;
@@ -80,10 +77,8 @@ function changeLanguage (language) {
         ${t.addButton}
     `;
 
-    document.getElementById ("general-error-message").innerHTML = t.errorMessage;
-
-    document.getElementById("about-me").textContent = t.aboutMeText[0];
-
+    document.getElementById ("general-error-message").innerHTML = t.errorMessage;    
+    document.getElementById ("about-me").innerHTML = t.aboutMeText.map (p => `<p>${p}</p>`).join ("");
     startAnimation ();
 
 }
@@ -91,17 +86,13 @@ function changeLanguage (language) {
 document.addEventListener ("DOMContentLoaded", () => {
 
   changeLanguage (currentLanguage);
-
   animateTitleAppearance ();
-
   const nameInput = document.getElementById ("activityName");
   const descriptionInput = document.getElementById ("activityDescription");
   const imageInput = document.getElementById ("activityImage");
-
   const name = localStorage.getItem ("activityName");
   const description = localStorage.getItem ("activityDescription");
   const image = localStorage.getItem ("activityImage");
-
   if (name) nameInput.value = name;
   if (description) descriptionInput.value = description;
   if (image) imageInput.value = image;
@@ -125,10 +116,8 @@ document.addEventListener ("DOMContentLoaded", () => {
   );
 
   insertActivities ();
-
   const addButton = document.getElementById ("activity-loader");
   addButton.addEventListener ("click", handler);
-
   animateTitleAppearance();
 
 });
