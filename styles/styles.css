@@ -113,7 +113,7 @@ h3 {
   height: 8.75em;
   border-radius: 50%;
   border: 0.25em solid #007bff;
-  margin-bottom: 1.5em;
+  margin-bottom: 2.5em;
 
 }
 
@@ -124,7 +124,7 @@ h3 {
   justify-content: center;
   flex-direction: row;
   gap: 1em;
-  margin: 0.5em 0 0.5em;
+  margin: 0em 0 0.5em;
   padding: 1.1em;
   border: 0.0625em solid #ccc;
   border-radius: 0.5em;
@@ -463,6 +463,26 @@ button {
 
 }
 
+.views-container {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 3.125em; 
+  margin: 0;
+  transform: scale(0.35);
+  
+}
+
+.counter {
+
+  width: 12.5em; 
+  height: 12.5em; 
+  
+}
+
 .card-container {
 
   display: flex;
@@ -634,25 +654,7 @@ img {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
