@@ -1,104 +1,91 @@
 
 
-/*import {Activity, Repository } from "../../src/index.mjs";
+/*
+  models.spec.js – Unit tests for Activity and Repository classes using Jasmine
 
-console.log (typeof Activity);*/
+  This file tests the main functionalities of the Activity and Repository classes
+  defined in the application. These tests validate object structure, data consistency,
+  and method behavior to ensure reliability in the application's data management logic.
 
-//----------------------------------------------------------
+  Includes:
+  - Existence and structure checks for Activity instances
+  - Validation of property assignment in Activity objects
+  - Initial state and method verification in the Repository class
 
-const {Activity, Repository} = require ("../../scripts/models");
+  These tests are written in Jasmine and help maintain code quality and prevent regressions.
+*/
 
+const { Activity, Repository } = require ("../../scripts/models");
 
-//TESTS
+// Tests for the Activity class
+describe ("Activity Class", () => {
 
-describe ("Clase Activity", () => {
+  // Test #1: Check if the class exists
+  it ("should be defined", () => {
 
-    /* TEST #1, PARA LA CLASE Activity*/
-    it ("Debería existir", () => {
+    expect (Activity).toBeDefined ();
 
-        expect (Activity).toBeDefined ();
+  });
 
-    });
+  // Test #2: Check if all expected properties exist
+  it ("should have id, title, description, and imgUrl properties", () => {
 
-    /* TEST #2, PARA LA CLASE Activity*/
-    it('Debería tener las propiedades id, title, description, and imgUrl', () => {
+    const id = 1;
+    const title = "Any Activity";
+    const description = "Description of a generic activity";
+    const imgUrl = "http://example.com/image.jpg";
+    const activity = new Activity (id, title, description, imgUrl);
+    expect (activity.hasOwnProperty ("id")).toBe (true);
+    expect (activity.hasOwnProperty ("title")).toBe (true);
+    expect (activity.hasOwnProperty ("description")).toBe (true);
+    expect (activity.hasOwnProperty ("imgUrl")).toBe (true);
 
-        const id = 1;
+  });
 
-        const title = 'Cualquier Actividad';
+  // Test #3: Validate correct assignment of properties
+  it ("should correctly assign values to properties", () => {
 
-        const description = 'Descripción de una actividad cualquiera';
+    const id = 1;
+    const title = "Any Activity";
+    const description = "Description of a generic activity";
+    const imgUrl = "http://example.com/image.jpg";
+    const activity = new Activity (id, title, description, imgUrl);
+    expect (activity.id).toBe (id);
+    expect (activity.title).toBe (title);
+    expect (activity.description).toBe (description);
+    expect (activity.imgUrl).toBe (imgUrl);
 
-        const imgUrl = 'http://example.com/image.jpg';
-
-        const activity = new Activity(id, title, description, imgUrl);
-
-        // Verificar que las propiedades existen en la instancia
-        expect(activity.hasOwnProperty('id')).toBe(true);
-
-        expect(activity.hasOwnProperty('title')).toBe(true);
-
-        expect(activity.hasOwnProperty('description')).toBe(true);
-
-        expect(activity.hasOwnProperty('imgUrl')).toBe(true);
-
-    });
-
-    /* TEST #3, PARA LA CLASE Activity*/
-    it("Debería asignar valores correctos a las propiedades", () => {
-
-        const id = 1;
-
-        const title = 'Cualquier actividad';
-
-        const description = "Descripción de una actividad cualquiera";
-        const imgUrl = 'http://example.com/image.jpg';
-
-        const activity = new Activity(id, title, description, imgUrl);
-
-        expect(activity.id).toBe(id);
-
-        expect(activity.title).toBe(title);
-
-        expect(activity.description).toBe(description);
-
-        expect(activity.imgUrl).toBe(imgUrl);
-
-    });
+  });
 
 });
 
+// Tests for the Repository class
+describe ("Repository Class", () => {
 
-describe ("Clase Repository", () => {
+  // Test #1: Check if the class exists
+  it ("should be defined", () => {
 
-    /* TEST #1, PARA LA CLASE Repository*/
-    it ("Debería existir", () => {
+    expect (Repository).toBeDefined ();
 
-        expect(Repository).toBeDefined();
+  });
 
-    });
+  // Test #2: Verify it initializes with an empty activities list
+  it ("should initialize with an empty activities list", () => {
 
-    /* TEST #2, PARA LA CLASE Repository*/
-    it("Debería inicializar con una lista de actividades vacia", () => {
-        
-        const repository = new Repository();
+    const repository = new Repository ();
+    expect (repository.getAllActivities ().length).toBe (0);
 
-        expect (repository.getAllActivities().length).toBe(0);
+  });
 
-    });
+  // Test #3: Check if all expected methods exist
+  it ("should have the methods getAllActivities, createActivity, and deleteActivity", () => {
 
-    /* TEST #3, PARA LA CLASE Repository*/
-    it('Debería tener los métodos getAllActivities, createActivity, and clearActivity', () => {
+    const repository = new Repository ();
+    expect (typeof repository.getAllActivities).toBe ("function");
+    expect (typeof repository.createActivity).toBe ("function");
+    expect (typeof repository.deleteActivity).toBe ("function");
 
-        const repository = new Repository();
+  });
 
-        expect(typeof repository.getAllActivities).toBe('function');
-
-        expect(typeof repository.createActivity).toBe('function');
-
-        expect(typeof repository.deleteActivity).toBe('function');
-
-    });
-
-})
+});
 
