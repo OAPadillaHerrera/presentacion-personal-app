@@ -1,16 +1,18 @@
 
 
 <!--
-  index.html – Main structure for the "presentacion-personal-app" site
+  index.html – Personal Web Terminal for Óscar Padilla
 
-  Defines the overall structure of the page, including:
-  - Language switch buttons for Spanish and English
-  - Header with profile photo and dynamic titles
-  - "About Me" section
-  - "Technologies" section with linked icons to official documentation
-  - Interactive form to add and display user activities
-  - Footer with social media icons and links (LinkedIn, GitHub)
-  Uses semantic HTML5 elements and standardized class/id naming conventions for clarity and maintainability.
+  Structured as a terminal-style interactive portfolio.
+  Includes:
+  - Language selector (Spanish / English)
+  - Profile header with animated greetings and typing effect
+  - "About Me" section styled with classic console elements
+  - Technologies with logos linking to documentation
+  - Dynamic form to add personal activities
+  - Footer with GitHub and LinkedIn links + visit counter
+
+  Designed with semantic HTML5, modern CSS, and accessible practices.
 -->
 
 <!DOCTYPE html>
@@ -27,6 +29,9 @@
     <link rel = "stylesheet" type = "text/css" href = "styles/reset.css">
     <link rel = "stylesheet" type = "text/css" href = "styles/styles.css">
     <link href = "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+
     <link rel = "icon" href = "assets/logos/Favicon.png" type = "image/png">
 
 </head>
@@ -57,9 +62,11 @@
 
             </div>   
 
-            <div>
+            <div>         
+                
+                <p class="prompt-line">PS C:\Users\Oscar\> <span id="welcome-to"></span></p>
+                <h1 id = "welcome" class = "hidden-title"></h1> 
 
-                <h1 id = "welcome"></h1>                
                 <h2 id = "name" class = "hidden-title"></h2>    
                 <h3 id = "title" class = "hidden-title"></h3>         
                 
@@ -182,7 +189,7 @@
                     <div class = "form-button-item1">
 
                         <input type = "text" id = "activityName" class = "form-button-input-width1"/>
-                        <label for = "activityName"></label>
+                        <label for="activityName"></label>
 
                     </div>
 
@@ -245,12 +252,16 @@
         </div>
 
     </footer>
+
+    <div class="views-frame">
     
-    <div class = "views-container">
+        <div class = "views-container">
       
-        <img src = "assets/logos/web_16628987.png" alt = "Web icon" class = "counter">
-        <a href="https://www.contadorvisitasgratis.com" title="contador de visitas html"><img src="https://counter1.optistats.ovh/private/contadorvisitasgratis.php?c=wbuln3el2mwdq8r1exa8afcprpwf6jq7" border="0" title="contador de visitas html" alt="contador de visitas html"></a>
+            <img src = "assets/logos/web_16628987.png" alt = "Web icon" class = "counter">
+            <a href="https://www.contadorvisitasgratis.com" title="contador de visitas html"><img src="https://counter1.optistats.ovh/private/contadorvisitasgratis.php?c=wbuln3el2mwdq8r1exa8afcprpwf6jq7" border="0" title="contador de visitas html" alt="contador de visitas html"></a>
     
+        </div>
+
     </div>
 
     <script src = "scripts/models.js"></script>

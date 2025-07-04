@@ -53,7 +53,7 @@ function writeText (elementId, text, speed, callback) {
 
 function startAnimation () {
 
-    writeText ("welcome", texts [currentLanguage].welcome || "Bienvenidos a mi Página Web!", 150);
+  writeText("welcome-to", "Welcome.exe", 150);
 
 }
 
@@ -63,6 +63,7 @@ function changeLanguage (language) {
 
     currentLanguage = language;
     const t = texts [language]
+    document.getElementById ("welcome").textContent = t.welcome;
     document.getElementById ("name").textContent = t.name;
     document.getElementById ("title").textContent = t.title;
     document.querySelectorAll (".font-heading")[0].textContent = t.aboutMeTitle;
@@ -126,6 +127,7 @@ function animateTitleAppearance () {
 
     const titles = [
 
+        document.getElementById ("welcome"),
         document.getElementById ("name"),
         document.getElementById ("title"),
         ...document.querySelectorAll (".font-heading")
