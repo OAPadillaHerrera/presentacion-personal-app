@@ -48,7 +48,7 @@ const texts = {
   en: {
 
     name: "Oscar Padilla",
-    title: "Full Stack Developer",
+    title: "Full Stack Web Developer",
     welcome: "Welcome to my Website!",
     aboutMeTitle: "About Me",
     technologiesTitle: "Technologies",
