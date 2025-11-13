@@ -15,7 +15,7 @@ const texts = {
   es: {
 
     name: "Óscar Padilla",
-    title: "Desarrollador Backend/Desarrollador Web Full Stack",
+    title: "Desarrollador Web Full Stack con enfoque en Backend",
     welcome: "¡Bienvenidos a mi Página Web!",
     aboutMeTitle: "Sobre Mi",
     technologiesTitle: "Tecnologías",
@@ -27,7 +27,7 @@ const texts = {
 
     aboutMeText: [            
 
-      "Lo que hago hoy. <em> Desarrollo proyectos a la medida mediante el diseño e implementación de soluciones backend sólidas y escalables que satisfacen las necesidades de los clientes, con una fuerte orientación al detalle, la seguridad y la consistencia de la información. Disfruto el desarrollo web porque combina programación, parte visual, manejo de información y acceso desde casi cualquier lugar.</em>",
+      "Lo que hago hoy. <em> Cuento con experiencia en el diseño y desarrollo de aplicaciones web basadas principalmente en Node.js, NestJS, TypeScript, PostgreSQL y Docker. He trabajado en la arquitectura y lógica del lado del servidor, asegurando código claro, procesos eficientes y soluciones bien estructuradas en proyectos nuevos y existentes. Me enfoco en optimizar procesos internos, automatizar tareas e integrar nuevas funcionalidades que fortalezcan la operación y el rendimiento del sistema dentro de entornos ágiles y colaborativos. Disfruto el desarrollo web porque combina programación, parte visual, manejo de información y acceso desde casi cualquier lugar. </em>",
       "<br>",
       "Proyectos. <em> Entre los proyectos en los que estoy trabajando de forma independiente, o en los que trabajé durante el Bootcamp en Henry, se encuentran: una aplicación web para una asociación de gestión del riesgo empresarial, un sistema para monitorear y optimizar el consumo energético en estaciones de servicio, y un e-commerce. Estas experiencias me han permitido aplicar lo aprendido tanto en frontend como en backend.</em>",
       "<br>",
@@ -48,7 +48,7 @@ const texts = {
   en: {
 
     name: "Oscar Padilla",
-    title: "Backend Developer/Full Stack Web Developer",
+    title: "Full Stack Web Developer (Backend-Oriented)",
     welcome: "Welcome to my Website!",
     aboutMeTitle: "About Me",
     technologiesTitle: "Technologies",
@@ -60,7 +60,7 @@ const texts = {
 
     aboutMeText: [     
       
-      "What I do today. <em> I develop custom projects through the design and implementation of robust and scalable backend solutions that meet client needs, with a strong focus on detail, security, and data consistency. I enjoy web development because it combines programming, data management, software architecture, and accessibility from almost anywhere.</em>",
+      "What I do today. <em> I have experience in designing and developing web applications mainly built with Node.js, NestJS, TypeScript, PostgreSQL, and Docker. I have worked on server-side architecture and logic, ensuring clean code, efficient processes, and well-structured solutions in both new and existing projects. I focus on optimizing internal processes, automating tasks, and integrating new features that enhance system operation and performance within agile and collaborative environments. I enjoy web development because it combines programming, data management, software architecture, and accessibility from almost anywhere. </em>",
       "<br>",
       "Projects.</strong> <em>Among the projects I am currently working on independently, or that I worked on during the Bootcamp at Henry, are: a web application for a business risk management association, a system to monitor and optimize energy consumption at service stations, and an e-commerce platform. These experiences have allowed me to apply what I’ve learned in both frontend and backend development.</em>",
       "<br>",
