@@ -1,12 +1,12 @@
 
 
 /* languages.js – Bilingual text file (Spanish / English)
-   
+
    This file contains the texts used in the interface of the website
-   in Spanish (es) and English (en). It allows dynamic language switching 
+   in Spanish (es) and English (en). It allows dynamic language switching
    without reloading the page, enabling internationalization of the application.
-   
-   Texts are organized by key and include titles, labels, messages, 
+
+   Texts are organized by key and include titles, labels, messages,
    and descriptive lists.
 */
 
@@ -15,7 +15,7 @@ const texts = {
   es: {
 
     name: "Óscar Padilla",
-    title: "Desarrollador Web Full Stack con enfoque en Backend",
+    title: "Desarrollador Web Full Stack | Backend y Analítica de Datos",
     welcome: "¡Bienvenidos a mi Página Web!",
     aboutMeTitle: "Sobre Mi",
     technologiesTitle: "Tecnologías",
@@ -25,30 +25,34 @@ const texts = {
     imageLabel: "Link de la imagen",
     addButton: "AGREGAR ACTIVIDAD",
 
-    aboutMeText: [            
+    aboutMeText: [
 
-      "Lo que hago hoy. <em> Cuento con experiencia en el diseño y desarrollo de aplicaciones web basadas principalmente en Node.js, NestJS, TypeScript, PostgreSQL y Docker. He trabajado en la arquitectura y lógica del lado del servidor, asegurando código claro, procesos eficientes y soluciones bien estructuradas en proyectos nuevos y existentes. Me enfoco en optimizar procesos internos, automatizar tareas e integrar nuevas funcionalidades que fortalezcan la operación y el rendimiento del sistema dentro de entornos ágiles y colaborativos. Disfruto el desarrollo web porque combina programación, parte visual, manejo de información y acceso desde casi cualquier lugar. </em>",
+      "Lo que hago hoy. <em>Soy Desarrollador Web Full Stack con enfoque en Backend. Cuento con experiencia práctica en el diseño y desarrollo de aplicaciones web, APIs y soluciones basadas en bases de datos, utilizando tecnologías como Node.js, NestJS, TypeScript, Python y PostgreSQL. He participado en el desarrollo de funcionalidades para aplicaciones en producción, durante mi experiencia como Backend Developer en una fintech, y en proyectos freelance, trabajando tanto de manera autónoma como colaborativa.</em>",
       "<br>",
-      "Proyectos. <em> Entre los proyectos en los que estoy trabajando de forma independiente, o en los que trabajé durante el Bootcamp en Henry, se encuentran: una aplicación web para una asociación de gestión del riesgo empresarial, un sistema para monitorear y optimizar el consumo energético en estaciones de servicio, y un e-commerce. Estas experiencias me han permitido aplicar lo aprendido tanto en frontend como en backend.</em>",
+      "<em>También he ampliado mi campo de trabajo hacia la Analítica de Datos, desarrollando soluciones que integran Python, SQL, PostgreSQL y herramientas de Business Intelligence como Metabase. Me interesa especialmente el ciclo completo de los datos: desde su obtención e integración mediante APIs externas, hasta su procesamiento, almacenamiento, análisis y visualización. Disfruto encontrar soluciones tecnológicas que permitan automatizar procesos, aprovechar mejor la información y facilitar la toma de decisiones.</em>",
       "<br>",
-      "Cómo trabajo. <em> Soy una persona orientada a resultados, con capacidades de liderazgo, que disfruta aprender e investigar nuevas herramientas para mejorar cada día. Me adapto a contextos dinámicos, puedo trabajar de forma autónoma o en equipo, y busco seguir creciendo profesionalmente en el desarrollo web.</em>",
-      "<br>",  
-      "Cómo empezó todo. <em> Mi interés por la programación comenzó en la universidad, cuando conocí los simuladores de procesos químicos y trabajé en ese tema como proyecto de grado. Aunque no programaba directamente, descubrí el potencial de los lenguajes de programación para resolver problemas complejos.</em>",
-      "<br>",  
-      "Mi experiencia previa. <em> A lo largo de mi carrera profesional (13 años aproximadamente), trabajé con herramientas como ERP, LIMS y CRM. Esto me motivó a aprender C++ y más adelante Python, lo que reafirmó mi decisión de enfocarme en el desarrollo de software. Mi formación base en Ingeniería Química me dio una mentalidad analítica, visión estructurada y gran capacidad de adaptación.</em>",
-      "<br>", 
-      "Más sobre mí. <em> Fuera del código, me apasionan la música y el cine. Siempre busco formas de combinar lo técnico con lo creativo.</em>"
+      "Proyectos. <em>A lo largo de mi formación y experiencia práctica he desarrollado proyectos individuales y colaborativos en las áreas de Frontend, Backend y Full Stack. Actualmente, trabajo como desarrollador freelance en <strong>energy-da-ml-platform</strong>, una plataforma web orientada al registro, análisis y gestión de información sobre consumo energético en estaciones de servicio. El proyecto integra tecnologías de desarrollo web, Data Analytics y Machine Learning para procesar información, generar indicadores y facilitar su visualización e interpretación.</em>",
+      "<br>",
+      "Cómo trabajo. <em>Soy una persona orientada a resultados, con capacidad de análisis, iniciativa y disposición para aprender continuamente. Me gusta investigar, comprender cómo funcionan las herramientas y aplicar buenas prácticas para construir soluciones claras, funcionales y mantenibles. Puedo trabajar de manera autónoma o en equipo, adaptándome a diferentes contextos y metodologías de trabajo.</em>",
+      "<br>",
+      "Cómo empezó todo. <em>Mi interés por la programación comenzó en la universidad, cuando conocí los simuladores de procesos químicos y trabajé en ese tema como proyecto de grado. Aunque no desarrollaba directamente el software, descubrí el potencial de los lenguajes de programación y las herramientas computacionales para representar procesos y resolver problemas complejos.</em>",
+      "<br>",
+      "Mi experiencia previa. <em>Antes de enfocarme en el desarrollo de software, construí una trayectoria profesional de aproximadamente 13 años en áreas relacionadas con operaciones, inspección, ensayos y desarrollo de negocios. Durante ese tiempo trabajé con herramientas empresariales como ERP, LIMS y CRM, además de utilizar Excel avanzado para el análisis de información y la elaboración de reportes operativos.</em>",
+      "<br>",
+      "<em>Esta experiencia, junto con mi formación como Ingeniero Químico, fortaleció mi capacidad analítica, comprensión de procesos y orientación a la resolución de problemas. Posteriormente, mi interés por la programación me llevó a profundizar en lenguajes como C++ y Python, hasta orientar mi desarrollo profesional hacia la ingeniería de software y la tecnología.</em>",
+      "<br>",
+      "Más sobre mí. <em>Fuera del código, me apasionan la música y el cine. Siempre encuentro interesante la conexión entre la tecnología, la creatividad y las distintas formas de expresión.</em>"
 
     ],
 
     errorMessage: `⚠️ Por favor completa todos los campos correctamente:<br>- Nombre y descripción sin números<br>- Imagen válida con extensión .jpg, .jpeg o .png`
-    
+
   },
 
   en: {
 
     name: "Oscar Padilla",
-    title: "Full Stack Web Developer (Backend-Oriented)",
+    title: "Full Stack Web Developer | Backend & Data Analytics",
     welcome: "Welcome to my Website!",
     aboutMeTitle: "About Me",
     technologiesTitle: "Technologies",
@@ -58,27 +62,32 @@ const texts = {
     imageLabel: "Image URL",
     addButton: "ADD ACTIVITY",
 
-    aboutMeText: [     
-      
-      "What I do today. <em> I have experience in designing and developing web applications mainly built with Node.js, NestJS, TypeScript, PostgreSQL, and Docker. I have worked on server-side architecture and logic, ensuring clean code, efficient processes, and well-structured solutions in both new and existing projects. I focus on optimizing internal processes, automating tasks, and integrating new features that enhance system operation and performance within agile and collaborative environments. I enjoy web development because it combines programming, data management, software architecture, and accessibility from almost anywhere. </em>",
+    aboutMeText: [
+
+      "What I do today. <em>I am a Full Stack Web Developer focused on Backend development. I have hands-on experience designing and developing web applications, APIs, and database-driven solutions using technologies such as Node.js, NestJS, TypeScript, Python, and PostgreSQL. I have contributed to the development of features for production applications during my experience as a Backend Developer at a fintech company, as well as through freelance projects, working both independently and collaboratively.</em>",
       "<br>",
-      "Projects.</strong> <em>Among the projects I am currently working on independently, or that I worked on during the Bootcamp at Henry, are: a web application for a business risk management association, a system to monitor and optimize energy consumption at service stations, and an e-commerce platform. These experiences have allowed me to apply what I’ve learned in both frontend and backend development.</em>",
+      "<em>I have also expanded my work into Data Analytics, developing solutions that combine Python, SQL, PostgreSQL, and Business Intelligence tools such as Metabase. I am particularly interested in the entire data lifecycle, from data acquisition and integration through external APIs to processing, storage, analysis, and visualization. I enjoy building technological solutions that automate processes, make better use of information, and support decision-making.</em>",
       "<br>",
-      "How I work. <em> I'm results-oriented, have leadership skills, and enjoy learning and applying new tools to improve every day. I'm adaptable to dynamic environments, capable of working independently or in teams, and committed to growing professionally in web development.</em>",
+      "Projects. <em>Throughout my training and hands-on experience, I have developed individual and collaborative projects in Frontend, Backend, and Full Stack development. I am currently working as a freelance developer on <strong>energy-da-ml-platform</strong>, a web platform focused on recording, analyzing, and managing energy consumption data from fuel stations. The project combines web development technologies, Data Analytics, and Machine Learning to process information, generate performance indicators, and support data visualization and interpretation.</em>",
       "<br>",
-      "How it all started. <em> My interest in programming began at university when I discovered chemical process simulators and worked on them as part of my graduation project. Although I wasn't coding directly, I saw the potential of programming languages to solve complex problems.</em>",
+      "How I work. <em>I am results-oriented, analytical, proactive, and always willing to learn. I enjoy researching, understanding how tools work, and applying good development practices to build clear, functional, and maintainable solutions. I am comfortable working independently or as part of a team, adapting to different environments and working methodologies.</em>",
       "<br>",
-      "My previous experience. <em> Throughout my professional career (approximately 13 years), I worked with tools like ERP, LIMS, and CRM systems. This led me to learn C++, and later Python, reinforcing my decision to focus on software development. My background in Chemical Engineering gave me an analytical mindset, a structured approach to problem-solving, and great adaptability.</em>",
+      "How it all began. <em>My interest in programming began at university, when I was introduced to chemical process simulators and explored this subject as part of my undergraduate thesis. Although I was not directly involved in software development at the time, I discovered the potential of programming languages and computational tools to model processes and solve complex problems.</em>",
       "<br>",
-      "More about me. <em> I'm passionate about music and cinema. I'm always looking for ways to combine the technical with the creative.</em>"
+      "My previous experience. <em>Before focusing on software development, I built approximately 13 years of professional experience in operations, inspection, testing, and business development. During that time, I worked with enterprise tools such as ERP, LIMS, and CRM systems, as well as advanced Excel for data analysis and operational reporting.</em>",
+      "<br>",
+      "<em>This experience, together with my background in Chemical Engineering, strengthened my analytical thinking, process understanding, and problem-solving skills. Later, my interest in programming led me to explore languages such as C++ and Python, eventually guiding my professional development toward software engineering and technology.</em>",
+      "<br>",
+      "More about me. <em>Outside of coding, I am passionate about music and cinema. I am always interested in the connection between technology, creativity, and different forms of expression.</em>"
 
     ],
 
     errorMessage: `⚠️ Please complete all fields correctly:<br>- Name and description without numbers<br>- Valid image with extension .jpg, .jpeg, or .png`
 
   }
-  
+
 };
+
 
 
   
